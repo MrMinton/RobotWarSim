@@ -47,7 +47,7 @@ class GenericRobot : public MovingRobot, public ShootingRobot, public SeeingRobo
             int currX = getX();
             int currY = getY();
 
-            vector
+            vector<
         }
 
         string getName() const {
