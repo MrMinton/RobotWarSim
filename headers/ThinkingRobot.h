@@ -3,6 +3,6 @@
 
 class ThinkingRobot : virtual public Robot {
 public:
-    ThinkingRobot(int startX = 0, int startY = 0) : Robot(startX, startY) {}
-    virtual void think() = 0;
+    ThinkingRobot(string name = "Default", int startX = 0, int startY = 0) : Robot(name, startX, startY) {}
+    virtual void think(vector<vector<Robot*>>& battlefield) = 0;
 };
