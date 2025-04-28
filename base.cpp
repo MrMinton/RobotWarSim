@@ -9,7 +9,37 @@ int m,n;
 
 class Battlefield{
 public:
-    int grid[m][n]; //ini belum settle buat yg lain dulu
+    char**a2d;
+
+    Battlefield(){
+        a2d = new char*[m];
+        for (int i = 0; i<m; i++) {
+            a2d[i] = new char[n];
+        }
+
+        for (int y=0; y<m; y++)
+        {
+            for (int x=0; x<n; x++){
+                a2d[y][x] = '-';
+            }
+        }
+
+        for (int y=0; y < m; y++){
+            for(int x=0; x < n; x++){
+                cout << a2d[y][x];
+            }
+            cout<<endl;
+            }
+        }
+
+    ~Battlefield(){
+        for (int i=0;i<m;i++){
+            delete[] a2d[i];
+        }
+        delete[] a2d;
+    }
+
+    
 };
 
 
@@ -34,5 +64,6 @@ int main(){
         }
     }
     cout << "M: "<<m <<" "<<"N: "<<n <<endl;
+    Battlefield b1;
     return 0;
 }
