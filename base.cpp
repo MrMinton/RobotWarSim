@@ -3,6 +3,8 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -103,15 +105,19 @@ int main(){
             if(line.find("GenericRobot") != string::npos){ 
                 stringstream ss(line);
                 ss >> type >> namabot >> xcord >> ycord;
+                if (ss.fail()){
+                    srand(time(0));
+                    xcord = rand() % row;
+                    ycord = rand() % cols;
+                }
                 Robot bot(xcord,ycord);
                 robots.push_back(bot);
             }
         }
     }
-    cout << "M: "<<row <<" "<<"N: "<<cols <<endl;
+    cout << "M: "<< row <<" "<<"N: "<<cols <<endl;
 
     for (Robot r: robots){
-
         cout << r.getX() << " is x "<< r.getY() <<" is y "<<endl;
     }
     Battlefield b1(robots);
