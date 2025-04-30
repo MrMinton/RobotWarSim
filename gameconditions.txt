@@ -5,3 +5,4 @@ GenericRobot Kidd 1 2
 GenericRobot Jet 2 2
 GenericRobot Alpha 3 2
 GenericRobot Beta 4 3
+GenericRobot Sigma random random
