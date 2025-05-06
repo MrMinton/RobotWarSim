@@ -3,11 +3,13 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <string>
 #include "MovingRobot.h"
 #include "ShootingRobot.h"
 #include "SeeingRobot.h"
 #include "ThinkingRobot.h"
 #include "Robot.h"
+#include "LogAction.h"
 
 using namespace std;
 
@@ -22,30 +24,38 @@ class GenericRobot : public MovingRobot, public ShootingRobot, public SeeingRobo
         GenericRobot(string robotName, int startX = 0, int startY = 0) : 
         Robot(robotName, startX, startY), MovingRobot(robotName, startX, startY), ShootingRobot(robotName, startX, startY), SeeingRobot(robotName, startX, startY), ThinkingRobot(robotName, startX, startY), name(robotName), shellsRemaining(10), destroyed(false) {}
 
-        void move(int dx, int dy) override {
-            // logAction --> straight away log action into output file. #parseLine
-            cout << name << " moves by (" << dx << ", " << dy << ")" << endl; // #parseLine
+        void move(int dx, int dy) override {            
             setPosition(getX() + dx, getY() + dy);
+            cout << name << " moved to (" + to_string(getX()) + ", " + to_string(getY()) + ")";
+            logAction(name + " moved to (" + to_string(getX()) + ", " + to_string(getY()) + ")");
         }
 
         void fire(int dx, int dy) override {
             if (shellsRemaining > 0) {
-                cout << name << " fires at (" << getX() + dx << ", " << getY() + dy << ")" << endl;  // #parseLine
+                string action = name + " fires at (" + to_string(getX() + dx) + ", " + to_string(getY() + dy) + ")";
+                cout << action << endl;
+                logAction(action);
                 shellsRemaining--;
             } 
 
             if (shellsRemaining = 0) {
-                cout << name << " has no shells left!" << endl; // #parseLine
+                string action = name + " has no shells left!";
+                cout << action << endl;
+                logAction(action);
                 destroy();
             }
         }
 
         void look(int dx, int dy) override {
-            cout << name << " looks at (" << getX() + dx << ", " << getY() + dy << ")" << endl;  // #parseLine
+            string action = name + " looks at (" + to_string(getX() + dx) + ", " + to_string(getY() + dy) + ")";
+            cout << action << endl;
+            logAction(action);
         }
 
         void think(vector<vector<Robot*>>& battlefield) override {
-            cout << name << " is thinking..." << endl;  // #parseLine
+            string action = name + " is thinking...";
+            cout << action << endl;
+            logAction(action);
             int currX = getX();
             int currY = getY();
 
@@ -71,10 +81,15 @@ class GenericRobot : public MovingRobot, public ShootingRobot, public SeeingRobo
                 int targetDX = enemiesAround[idx].first;
                 int targetDY = enemiesAround[idx].second;
         
-                cout << name << " sees an enemy and fires!" << endl;
+                string action = name + " sees an enemy and fires!";
+                cout << action << endl;
+                logAction(action);
+
                 fire(targetDX, targetDY);
             } else {
-                cout << name << " finds no enemy nearby. Moving randomly." << endl;
+                string action = name + " finds no enemy nearby. Moving randomly.";
+                cout << action << endl;
+                logAction(action);  
                 move((rand() % 3) - 1, (rand() % 3) - 1);
             }
         }

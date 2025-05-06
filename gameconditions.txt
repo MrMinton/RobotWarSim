@@ -1,8 +1,5 @@
-M by N : 5 10
-steps: 300
-robots: 5
-GenericRobot Kidd 1 2
-GenericRobot Jet 2 2
-GenericRobot Alpha 3 2
-GenericRobot Beta 4 3
-GenericRobot Sigma random random
+M by N : 50 50
+steps: 50
+robots: 2
+GenericRobot Patrick 2 3
+GenericRobot Kai 5 4

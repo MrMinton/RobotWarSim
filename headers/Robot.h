@@ -8,6 +8,7 @@ class Robot {
 private:
     int x, y;
     string name;
+    int robot_amount;
 
 protected:
     void setPosition(int newX, int newY) {
