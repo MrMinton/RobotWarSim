@@ -55,10 +55,17 @@ public:
             }
         }
 
-        for (Robot r: robots){
-            a2d[r.getY()][r.getX()] = 'R';
+        for (Robot r : robots) {
+            int x = r.getX();
+            int y = r.getY();
+
+            if (x >= 0 && x < cols && y >= 0 && y < row) {
+                a2d[y][x] = 'R';
+            } else {
+                cout << "❗ Skipping robot at (" << x << ", " << y << ") — out of bounds\n";
+            }
         }
-        
+
         for (int y=0; y < row; y++){
             for(int x=0; x < cols; x++){
                 cout << a2d[y][x] << " ";
@@ -81,7 +88,7 @@ void parseBattlefieldGrid(string &line){
     size_t first = line.find(":")+1;
     string numbers =line.substr(first);
     stringstream ss(numbers);
-    ss >> cols >> row;
+    ss >> row >> cols;
     // cout << "This is m: "<< m <<" "<< "This is n: "<< n;
 }
 
@@ -107,15 +114,16 @@ int main(){
                 ss >> type >> namabot >> xcord >> ycord;
                 if (ss.fail()){
                     srand(time(0));
-                    xcord = rand() % row;
-                    ycord = rand() % cols;
+                    xcord = rand() % cols;
+                    ycord = rand() % row;
                 }
                 Robot bot(xcord,ycord);
                 robots.push_back(bot);
             }
         }
     }
-    cout << "M: "<< row <<" "<<"N: "<<cols <<endl;
+    cout << "M: "<< row <<" "<<"N: "<< cols <<endl;
+    cout << "Final dimensions -> rows: " << row << ", cols: " << cols << endl;
 
     for (Robot r: robots){
         cout << r.getX() << " is x "<< r.getY() <<" is y "<<endl;
