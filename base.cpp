@@ -28,16 +28,18 @@ class Robot{
         int getY(){
             return y;
         }
-        void parseRobots(string &line);
     };
-    
-    void Robot::parseRobots(string &line){
+
+class Parse{
+public:
+    void parseRobots(string &line){
         size_t nombor = line.find(":")+1;
         string robots = line.substr(nombor);
         stringstream ss(robots);
         ss >> robot_amount;
         cout << "Robot amount is "<< robot_amount<<endl;
-    }
+    };
+};
     
 class Battlefield{
 public:
@@ -106,7 +108,7 @@ int main(){
                 parseBattlefieldGrid(line);
             }
             if (line.find("robots") != string::npos){
-                Robot r1;
+                Parse r1;
                 r1.parseRobots(line);
             }
             if(line.find("GenericRobot") != string::npos){ 
