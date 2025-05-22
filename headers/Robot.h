@@ -4,34 +4,57 @@
 #include <vector>
 using namespace std;
 
-class Robot {
+class Robot{
 private:
-    int x, y;
+    bool alive = true;
     string name;
-
-protected:
-    void setPosition(int newX, int newY) {
-        x = newX;
-        y = newY;
-    }
+    string type;
+    int x, y;
+    int lives =3;
+    int shells =10;
 
 public:
-    Robot (string robotName = "Default", int startX = 0, int startY = 0) : name(robotName), x(startX), y(startY) {}
-
-    virtual ~Robot() {}
-
-    int getX() const {return x;}
-    int getY() const {return y;}
-
-    string getName() const {
-        return name;
+    Robot(){};
+    Robot(int x_coord,int y_coord){
+        x = x_coord;
+        y = y_coord;
+    }
+    virtual ~Robot();
+    int getX(){
+        return x;
+    }
+    
+    int getY(){
+        return y;
     }
 
-    virtual void look (int dx, int dy) = 0;
-    virtual void move (int dx, int dy) = 0;
-    virtual void fire (int dx, int dy) = 0;
-    virtual void think (vector<vector<Robot*>>& battlefield) = 0;
+    int getShells(){
+        return shells;
+    }
 
+    bool isAlive(){
+        return alive;
+    }
+
+    void selfDestruct(){
+        alive = false;
+        lives--;
+    }
+    void takeDamage() {
+        lives--;
+        if (lives <= 0) {
+            alive = false;
+            cout << "Robot " << name << " has been destroyed!" << endl;
+        } else {
+            cout << "Robot " << name << " was hit! Lives left: " << lives << endl;
+        }
+    }
+
+    int getLive(){
+        return lives;
+    }
 };
+
+Robot::~Robot() {}
 
 
