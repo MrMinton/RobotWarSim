@@ -60,7 +60,6 @@ public:
             cout<<endl;
             }
         }
-
     ~Battlefield(){
         for (int i=0;i<row;i++){
             delete[] a2d[i];
@@ -83,6 +82,9 @@ int main(){
     string type,namabot;
     int xcord,ycord;
     fstream myFile;
+    int totalTurns = 5;
+    int currentTurn = 0;
+
 
     myFile.open("gameconditions.txt", ios::in);
     if(myFile.is_open()){
@@ -111,24 +113,58 @@ int main(){
 
     for (Robot* r: robots){
         cout << r->getX() << " is x "<< r->getY() <<" is y "<<endl;
+        // cout <<  r->getName();
     }
 
     Battlefield b1(robots);
 
     cout << "--- TESTING FIRE FUNCTION ---" << endl;
+    
+    while (currentTurn < totalTurns) {
+        cout << "\n\n======= TURN #" << currentTurn + 1 << " =======\n";
 
+        for (Robot* r : robots) {
+            if (r->isAlive()) {
+                if (ThinkingRobot* thinker = dynamic_cast<ThinkingRobot*>(r)) {
+                    cout << "\n🔁 Robot at (" << r->getX() << ", " << r->getY() << ") is taking its turn...\n";
+                    thinker->think(robots);
+                }
+            }
+        }
+
+        cout << "\n📋 Robot Status After Turn " << currentTurn + 1 << ":\n";
+        for (Robot* r : robots) {
+            cout << " - Robot at (" << r->getX() << ", " << r->getY() << ") ";
+            if (r->isAlive())
+                cout << "is alive with " << r->getLive() << " lives";
+            else
+                cout << "💀 DEAD";
+            cout << endl;
+        }
+
+        int aliveCount = 0;
+        for (Robot* r : robots) {
+            if (r->isAlive()) aliveCount++;
+        }
+
+        if (aliveCount <= 1) {
+            cout << "\n🏁 Game ended early: only one robot left alive.\n";
+            break;
+        }
+
+        currentTurn++;
+    }
+
+    cout << "\n==============================\n";
+    cout << "🏆 FINAL RESULTS:\n";
     for (Robot* r : robots) {
-        if (r->isAlive()) {
-            cout << "Robot at (" << r->getX() << ", " << r->getY() << ") is firing...\n";
-            if (ShootingRobot* shooter = dynamic_cast<ShootingRobot*>(r)) {
-                shooter->fire(robots);
-        }
-        }
+        cout << " - Robot at (" << r->getX() << ", " << r->getY() << ") ";
+        if (r->isAlive())
+            cout << "SURVIVED with " << r->getLive() << " lives";
+        else
+            cout << "was DESTROYED.";
+        cout << endl;
     }
-
-    for (Robot* r: robots){
-        cout << r->getLive()<<endl;
-    }
-
+    
     return 0;
 }

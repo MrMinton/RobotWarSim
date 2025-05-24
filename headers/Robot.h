@@ -20,6 +20,7 @@ public:
         y = y_coord;
     }
     virtual ~Robot();
+
     int getX(){
         return x;
     }
@@ -49,7 +50,9 @@ public:
             cout << "Robot " << name << " was hit! Lives left: " << lives << endl;
         }
     }
-
+    void upgrade(){
+        
+    }
     int getLive(){
         return lives;
     }
