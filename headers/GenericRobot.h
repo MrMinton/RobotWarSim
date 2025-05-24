@@ -71,6 +71,8 @@ public:
                 if (r->isAlive() && r->getX() == targetX && r->getY() == targetY) {
                     r->takeDamage();
                     cout << "Hit"<<endl;
+                    // upgrade function if r->isAlive == false{}
+                    // performUpgrade()
                     break;
                     }
                 }
@@ -80,3 +82,9 @@ public:
         }
     }
 };
+
+//Hidebot(){}
+
+
+//performupgrade(){
+// randomising stuff HIdebot HideBot();}
