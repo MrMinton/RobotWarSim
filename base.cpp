@@ -76,15 +76,24 @@ void parseBattlefieldGrid(string &line){
     // cout << "This is m: "<< m <<" "<< "This is n: "<< n;
 }
 
+void parseSteps(string &line){
+    size_t first = line.find(":")+1;
+    string number_of_steps = line.substr(first);
+    stringstream ss(number_of_steps);
+    ss >> steps;
+    cout << "Number of steps is "<<steps<<endl;
+}
+
 int main(){
     srand(time(0));
     vector<Robot*> robots;
     string type,namabot;
     int xcord,ycord;
-    fstream myFile;
-    int totalTurns = 5;
+    ifstream myFile;
+    ofstream outputFile("actionlog.txt");
     int currentTurn = 0;
-
+    string lines;
+    int times =100;
 
     myFile.open("gameconditions.txt", ios::in);
     if(myFile.is_open()){
@@ -92,6 +101,9 @@ int main(){
         while(getline(myFile,line)){
             if (line.find("M by N") != string::npos) {
                 parseBattlefieldGrid(line);
+            }
+            if (line.find("steps") != string::npos){
+                parseSteps(line);
             }
             if (line.find("robots") != string::npos){
                 Parse r1;
@@ -118,9 +130,11 @@ int main(){
 
     Battlefield b1(robots);
 
-    cout << "--- TESTING FIRE FUNCTION ---" << endl;
-    
-    while (currentTurn < totalTurns) {
+    cout << "--- TESTING FIRE FUNCTION ---" <<endl;
+
+    streambuf* coutbuf = cout.rdbuf(); // save old buffer
+    cout.rdbuf(outputFile.rdbuf()); // redirect cout to file
+    while (currentTurn < steps) {
         cout << "\n\n======= TURN #" << currentTurn + 1 << " =======\n";
 
         for (Robot* r : robots) {
@@ -165,6 +179,59 @@ int main(){
             cout << "was DESTROYED.";
         cout << endl;
     }
-    
+
+    /// File Writing
+    // std::streambuf* coutbuf = std::cout.rdbuf(); // save old buffer
+    // std::cout.rdbuf(outputFile.rdbuf()); // redirect cout to file
+
+    // outputFile << "RobotWar Begins!"<<endl;
+    // while (currentTurn < steps) {
+    //     cout << "\n\n======= TURN #" << currentTurn + 1 << " =======\n";
+
+    //     for (Robot* r : robots) {
+    //         if (r->isAlive()) {
+    //             if (ThinkingRobot* thinker = dynamic_cast<ThinkingRobot*>(r)) {
+    //                 outputFile << "\n🔁 Robot at (" << r->getX() << ", " << r->getY() << ") is taking its turn...\n";
+    //                 thinker->think(robots);
+    //             }
+    //         }
+    //     }
+
+    //     outputFile << "\n📋 Robot Status After Turn " << currentTurn + 1 << ":\n";
+    //     for (Robot* r : robots) {
+    //         outputFile << " - Robot at (" << r->getX() << ", " << r->getY() << ") ";
+    //         if (r->isAlive())
+    //             outputFile << "is alive with " << r->getLive() << " lives";
+    //         else
+    //             outputFile << "💀 DEAD";
+    //         outputFile << endl;
+    //     }
+
+    //     int aliveCount = 0;
+    //     for (Robot* r : robots) {
+    //         if (r->isAlive()) aliveCount++;
+    //     }
+
+    //     if (aliveCount <= 1) {
+    //         outputFile << "\n🏁 Game ended early: only one robot left alive.\n";
+    //         break;
+    //     }
+
+    //     currentTurn++;
+    // }
+
+    // outputFile << "\n==============================\n";
+    // outputFile << "🏆 FINAL RESULTS:\n";
+    // for (Robot* r : robots) {
+    //     outputFile << " - Robot at (" << r->getX() << ", " << r->getY() << ") ";
+    //     if (r->isAlive())
+    //         outputFile << "SURVIVED with " << r->getLive() << " lives";
+    //     else
+    //         outputFile << "was DESTROYED.";
+    //     outputFile << endl;
+    // }
+    std::cout.rdbuf(coutbuf);
+    outputFile.close();
+         
     return 0;
 }

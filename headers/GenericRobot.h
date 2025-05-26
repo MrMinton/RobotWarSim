@@ -11,6 +11,7 @@
 
 int row,cols;
 int robot_amount;
+int steps;
 
 using namespace std;
 
@@ -52,9 +53,15 @@ public:
             cout << "Out of shells byebye!"<<endl;
             selfDestruct();
         }
+        else{
+            cout<< "Getshell problem"<<endl;
+        }
         if (dx == 0 && dy == 0){
             cout << "Not allowed to kill urself";
             return;
+        }
+        else{
+            cout << "Not allowed to kill urself problem"<<endl;
         }
 
         int targetX = dx + getX();
@@ -63,7 +70,9 @@ public:
         if (targetX < 0 || targetX >= cols || targetY < 0 || targetY>=row){
             cout << "Out of bounds"<< endl;
         }
-
+        else{
+            cout<<"Out of bounds problem"<<endl;
+        }
         int hitprob = rand() % 100;
         
         if (hitprob < 70){
