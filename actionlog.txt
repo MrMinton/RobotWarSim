@@ -3,217 +3,316 @@
 ======= TURN #1 =======
 
 🔁 Robot at (1, 2) is taking its turn...
+Miss
+Remaining shells = 9
 
 🔁 Robot at (1, 1) is taking its turn...
+Miss coz more than 70
+Remaining shells = 9
 
 🔁 Robot at (0, 2) is taking its turn...
+Robot 1,2 was hit! Lives left: 2
+Hit
+Remaining shells = 9
 
 🔁 Robot at (2, 0) is taking its turn...
+Miss
+Remaining shells = 9
 
-🔁 Robot at (2, 3) is taking its turn...
+🔁 Robot at (4, 4) is taking its turn...
+Miss
+Remaining shells = 9
 
 📋 Robot Status After Turn 1:
- - Robot at (1, 2) is alive with 3 lives
+ - Robot at (1, 2) is alive with 2 lives
  - Robot at (1, 1) is alive with 3 lives
  - Robot at (0, 2) is alive with 3 lives
  - Robot at (2, 0) is alive with 3 lives
- - Robot at (2, 3) is alive with 3 lives
+ - Robot at (4, 4) is alive with 3 lives
 
 
 ======= TURN #2 =======
 
 🔁 Robot at (1, 2) is taking its turn...
+Miss coz more than 70
+Remaining shells = 9
 
 🔁 Robot at (1, 1) is taking its turn...
+Miss coz more than 70
+Remaining shells = 9
 
 🔁 Robot at (0, 2) is taking its turn...
-Out of bounds
 Miss
+Remaining shells = 9
 
 🔁 Robot at (2, 0) is taking its turn...
-Out of bounds
 Miss
+Remaining shells = 9
 
-🔁 Robot at (2, 3) is taking its turn...
+🔁 Robot at (4, 4) is taking its turn...
+Miss coz more than 70
+Remaining shells = 9
 
 📋 Robot Status After Turn 2:
- - Robot at (1, 2) is alive with 3 lives
+ - Robot at (1, 2) is alive with 2 lives
  - Robot at (1, 1) is alive with 3 lives
  - Robot at (0, 2) is alive with 3 lives
  - Robot at (2, 0) is alive with 3 lives
- - Robot at (2, 3) is alive with 3 lives
+ - Robot at (4, 4) is alive with 3 lives
 
 
 ======= TURN #3 =======
 
 🔁 Robot at (1, 2) is taking its turn...
+Miss coz more than 70
+Remaining shells = 9
 
 🔁 Robot at (1, 1) is taking its turn...
+Robot 1,2 was hit! Lives left: 1
+Hit
+Remaining shells = 9
 
 🔁 Robot at (0, 2) is taking its turn...
+Miss
+Remaining shells = 9
 
 🔁 Robot at (2, 0) is taking its turn...
+Miss
+Remaining shells = 9
 
-🔁 Robot at (2, 3) is taking its turn...
+🔁 Robot at (4, 4) is taking its turn...
+Miss
+Remaining shells = 9
 
 📋 Robot Status After Turn 3:
- - Robot at (1, 2) is alive with 3 lives
+ - Robot at (1, 2) is alive with 1 lives
  - Robot at (1, 1) is alive with 3 lives
  - Robot at (0, 2) is alive with 3 lives
  - Robot at (2, 0) is alive with 3 lives
- - Robot at (2, 3) is alive with 3 lives
+ - Robot at (4, 4) is alive with 3 lives
 
 
 ======= TURN #4 =======
 
 🔁 Robot at (1, 2) is taking its turn...
+Miss coz more than 70
+Remaining shells = 9
 
 🔁 Robot at (1, 1) is taking its turn...
+Miss coz more than 70
+Remaining shells = 9
 
 🔁 Robot at (0, 2) is taking its turn...
+Miss
+Remaining shells = 9
 
 🔁 Robot at (2, 0) is taking its turn...
+Out of bounds
+Miss
+Remaining shells = 9
 
-🔁 Robot at (2, 3) is taking its turn...
+🔁 Robot at (4, 4) is taking its turn...
+Out of bounds
+Miss
+Remaining shells = 9
 
 📋 Robot Status After Turn 4:
- - Robot at (1, 2) is alive with 3 lives
+ - Robot at (1, 2) is alive with 1 lives
  - Robot at (1, 1) is alive with 3 lives
  - Robot at (0, 2) is alive with 3 lives
  - Robot at (2, 0) is alive with 3 lives
- - Robot at (2, 3) is alive with 3 lives
+ - Robot at (4, 4) is alive with 3 lives
 
 
 ======= TURN #5 =======
 
 🔁 Robot at (1, 2) is taking its turn...
+Miss
+Remaining shells = 9
 
 🔁 Robot at (1, 1) is taking its turn...
+Miss coz more than 70
+Remaining shells = 9
 
 🔁 Robot at (0, 2) is taking its turn...
+Miss
+Remaining shells = 9
 
 🔁 Robot at (2, 0) is taking its turn...
+Out of bounds
+Miss
+Remaining shells = 9
 
-🔁 Robot at (2, 3) is taking its turn...
+🔁 Robot at (4, 4) is taking its turn...
+Out of bounds
+Miss coz more than 70
+Remaining shells = 9
 
 📋 Robot Status After Turn 5:
- - Robot at (1, 2) is alive with 3 lives
+ - Robot at (1, 2) is alive with 1 lives
  - Robot at (1, 1) is alive with 3 lives
  - Robot at (0, 2) is alive with 3 lives
  - Robot at (2, 0) is alive with 3 lives
- - Robot at (2, 3) is alive with 3 lives
+ - Robot at (4, 4) is alive with 3 lives
 
 
 ======= TURN #6 =======
 
 🔁 Robot at (1, 2) is taking its turn...
+Miss
+Remaining shells = 9
 
 🔁 Robot at (1, 1) is taking its turn...
+Miss
+Remaining shells = 9
 
 🔁 Robot at (0, 2) is taking its turn...
-Out of bounds
+Miss coz more than 70
+Remaining shells = 9
 
 🔁 Robot at (2, 0) is taking its turn...
+Out of bounds
+Miss coz more than 70
+Remaining shells = 9
 
-🔁 Robot at (2, 3) is taking its turn...
+🔁 Robot at (4, 4) is taking its turn...
+Miss
+Remaining shells = 9
 
 📋 Robot Status After Turn 6:
- - Robot at (1, 2) is alive with 3 lives
+ - Robot at (1, 2) is alive with 1 lives
  - Robot at (1, 1) is alive with 3 lives
  - Robot at (0, 2) is alive with 3 lives
  - Robot at (2, 0) is alive with 3 lives
- - Robot at (2, 3) is alive with 3 lives
+ - Robot at (4, 4) is alive with 3 lives
 
 
 ======= TURN #7 =======
 
 🔁 Robot at (1, 2) is taking its turn...
+Miss
+Remaining shells = 9
 
 🔁 Robot at (1, 1) is taking its turn...
+Miss
+Remaining shells = 9
 
 🔁 Robot at (0, 2) is taking its turn...
-Robot  was hit! Lives left: 2
-Hit
+Miss coz more than 70
+Remaining shells = 9
 
 🔁 Robot at (2, 0) is taking its turn...
-Out of bounds
 Miss
+Remaining shells = 9
 
-🔁 Robot at (2, 3) is taking its turn...
-Miss
+🔁 Robot at (4, 4) is taking its turn...
+Out of bounds
+Miss coz more than 70
+Remaining shells = 9
 
 📋 Robot Status After Turn 7:
- - Robot at (1, 2) is alive with 3 lives
- - Robot at (1, 1) is alive with 2 lives
+ - Robot at (1, 2) is alive with 1 lives
+ - Robot at (1, 1) is alive with 3 lives
  - Robot at (0, 2) is alive with 3 lives
  - Robot at (2, 0) is alive with 3 lives
- - Robot at (2, 3) is alive with 3 lives
+ - Robot at (4, 4) is alive with 3 lives
 
 
 ======= TURN #8 =======
 
 🔁 Robot at (1, 2) is taking its turn...
+Miss coz more than 70
+Remaining shells = 9
 
 🔁 Robot at (1, 1) is taking its turn...
+Miss coz more than 70
+Remaining shells = 9
 
 🔁 Robot at (0, 2) is taking its turn...
+Out of bounds
+Miss
+Remaining shells = 9
 
 🔁 Robot at (2, 0) is taking its turn...
+Out of bounds
+Miss coz more than 70
+Remaining shells = 9
 
-🔁 Robot at (2, 3) is taking its turn...
+🔁 Robot at (4, 4) is taking its turn...
+Miss coz more than 70
+Remaining shells = 9
 
 📋 Robot Status After Turn 8:
- - Robot at (1, 2) is alive with 3 lives
- - Robot at (1, 1) is alive with 2 lives
+ - Robot at (1, 2) is alive with 1 lives
+ - Robot at (1, 1) is alive with 3 lives
  - Robot at (0, 2) is alive with 3 lives
  - Robot at (2, 0) is alive with 3 lives
- - Robot at (2, 3) is alive with 3 lives
+ - Robot at (4, 4) is alive with 3 lives
 
 
 ======= TURN #9 =======
 
 🔁 Robot at (1, 2) is taking its turn...
+Miss
+Remaining shells = 9
 
 🔁 Robot at (1, 1) is taking its turn...
+Miss
+Remaining shells = 9
 
 🔁 Robot at (0, 2) is taking its turn...
+Robot 1,2 has been destroyed!
+Hit
+Remaining shells = 9
 
 🔁 Robot at (2, 0) is taking its turn...
+Miss
+Remaining shells = 9
 
-🔁 Robot at (2, 3) is taking its turn...
+🔁 Robot at (4, 4) is taking its turn...
+Out of bounds
+Miss coz more than 70
+Remaining shells = 9
 
 📋 Robot Status After Turn 9:
- - Robot at (1, 2) is alive with 3 lives
- - Robot at (1, 1) is alive with 2 lives
+ - Robot at (1, 2) 💀 DEAD
+ - Robot at (1, 1) is alive with 3 lives
  - Robot at (0, 2) is alive with 3 lives
  - Robot at (2, 0) is alive with 3 lives
- - Robot at (2, 3) is alive with 3 lives
+ - Robot at (4, 4) is alive with 3 lives
 
 
 ======= TURN #10 =======
 
-🔁 Robot at (1, 2) is taking its turn...
-Miss
-
 🔁 Robot at (1, 1) is taking its turn...
+Miss
+Remaining shells = 9
 
 🔁 Robot at (0, 2) is taking its turn...
+Out of bounds
+Miss
+Remaining shells = 9
 
 🔁 Robot at (2, 0) is taking its turn...
+Out of bounds
+Miss
+Remaining shells = 9
 
-🔁 Robot at (2, 3) is taking its turn...
+🔁 Robot at (4, 4) is taking its turn...
+Miss coz more than 70
+Remaining shells = 9
 
 📋 Robot Status After Turn 10:
- - Robot at (1, 2) is alive with 3 lives
- - Robot at (1, 1) is alive with 2 lives
+ - Robot at (1, 2) 💀 DEAD
+ - Robot at (1, 1) is alive with 3 lives
  - Robot at (0, 2) is alive with 3 lives
  - Robot at (2, 0) is alive with 3 lives
- - Robot at (2, 3) is alive with 3 lives
+ - Robot at (4, 4) is alive with 3 lives
 
 ==============================
 🏆 FINAL RESULTS:
- - Robot at (1, 2) SURVIVED with 3 lives
- - Robot at (1, 1) SURVIVED with 2 lives
+ - Robot at (1, 2) was DESTROYED.
+ - Robot at (1, 1) SURVIVED with 3 lives
  - Robot at (0, 2) SURVIVED with 3 lives
  - Robot at (2, 0) SURVIVED with 3 lives
- - Robot at (2, 3) SURVIVED with 3 lives
+ - Robot at (4, 4) SURVIVED with 3 lives

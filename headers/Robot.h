@@ -39,15 +39,15 @@ public:
 
     void selfDestruct(){
         alive = false;
-        lives--;
+        cout << "Robot " << getX()<<","<<getY() << " has been destroyed!" << endl;;
     }
     void takeDamage() {
         lives--;
         if (lives <= 0) {
             alive = false;
-            cout << "Robot " << name << " has been destroyed!" << endl;
+            cout << "Robot " << getX()<<","<<getY() << " has been destroyed!" << endl;
         } else {
-            cout << "Robot " << name << " was hit! Lives left: " << lives << endl;
+            cout << "Robot " << getX()<<","<<getY() << " was hit! Lives left: " << lives << endl;
         }
     }
     void upgrade(){

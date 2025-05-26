@@ -22,7 +22,7 @@ public:
     virtual void think(vector<Robot*>& robots){
         int rand_num = rand()%3;
         int decision = rand_num;
-        switch(decision){
+        switch(0){
             case 0:
                 fire(robots);
                 break;
@@ -52,42 +52,37 @@ public:
         if (getShells()<=0){
             cout << "Out of shells byebye!"<<endl;
             selfDestruct();
-        }
-        else{
-            cout<< "Getshell problem"<<endl;
-        }
-        if (dx == 0 && dy == 0){
-            cout << "Not allowed to kill urself";
             return;
         }
-        else{
-            cout << "Not allowed to kill urself problem"<<endl;
-        }
 
+        int newShells= getShells()-1;
         int targetX = dx + getX();
         int targetY = dy + getY();
+        int hitprob = rand() % 100;
 
         if (targetX < 0 || targetX >= cols || targetY < 0 || targetY>=row){
             cout << "Out of bounds"<< endl;
         }
-        else{
-            cout<<"Out of bounds problem"<<endl;
-        }
-        int hitprob = rand() % 100;
-        
         if (hitprob < 70){
             for (Robot* r : robots) {
                 if (r->isAlive() && r->getX() == targetX && r->getY() == targetY) {
                     r->takeDamage();
                     cout << "Hit"<<endl;
+                    cout<< "Remaining shells = "<<newShells<<endl;
                     // upgrade function if r->isAlive == false{}
                     // performUpgrade()
                     break;
                     }
+                else {
+                    cout << "Miss"<<endl;
+                    cout<< "Remaining shells = "<<newShells<<endl;
+                    break;
                 }
             }
+        }
         else {
-            cout << "Miss"<<endl;
+            cout << "Miss coz more than 70"<<endl;
+            cout<< "Remaining shells = "<<newShells<<endl;
         }
     }
 };
