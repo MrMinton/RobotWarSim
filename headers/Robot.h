@@ -29,6 +29,15 @@ public:
         return y;
     }
 
+    int setPosition(int nX, int nY) {
+        x = nX;
+        y = nY;
+    }
+
+    string getName() {
+        return name;
+    }
+
     int getShells(){
         return shells;
     }
@@ -37,7 +46,7 @@ public:
         return alive;
     }
 
-    void selfDestruct(){
+    bool selfDestruct(){
         alive = false;
         lives--;
     }
@@ -50,9 +59,9 @@ public:
             cout << "Robot " << name << " was hit! Lives left: " << lives << endl;
         }
     }
-    void upgrade(){
+    // void upgrade(){
         
-    }
+    // }
     int getLive(){
         return lives;
     }
