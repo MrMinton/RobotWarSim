@@ -82,7 +82,7 @@ int main(){
     string type,namabot;
     int xcord,ycord;
     fstream myFile;
-    int totalTurns = 5;
+    int totalTurns = 50;
     int currentTurn = 0;
 
 
@@ -120,7 +120,7 @@ int main(){
 
     cout << "--- TESTING FIRE FUNCTION ---" << endl;
     
-    while (currentTurn < 5) {
+    while (currentTurn < 50) {
         cout << "\n\n======= TURN #" << currentTurn + 1 << " =======\n";
 
         for (Robot* r : robots) {
