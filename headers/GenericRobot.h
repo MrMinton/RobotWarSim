@@ -192,6 +192,32 @@ public:
 
     virtual void think(vector<Robot*>& robots){
         reveal();
+        
+    if (wasHit()) {
+        cout << "💥 Robot at (" << getX() << ", " << getY() << ") u r eliminated and skip action this turn.\n";
+
+        int newX, newY, attempts = 0;
+        do {
+            newX = rand() % cols;
+            newY = rand() % row;
+            bool occupied = false;
+
+            for (Robot* r : robots) {
+                if (r != this && r->isAlive() && r->getX() == newX && r->getY() == newY) {
+                    occupied = true;
+                    break;
+                }
+            }
+
+            if (!occupied) break;
+            attempts++;
+        } while (attempts < 10);
+
+        setPosition(newX, newY); 
+        cout << "💫 Robot respawned to new position (" << newX << ", " << newY << ")\n";  
+        resetHit();
+        return;  // skip the rest of the turn
+    }
 
         while(true) {
             int rand_num = rand()%5;
@@ -222,8 +248,76 @@ public:
         }       
     };
 
-    virtual void move(vector<Robot*>& robots) {};
-    virtual void look(vector<Robot*>& robots) {};
+    virtual void move(vector<Robot*>& robots) {
+         vector<pair<int,int>> directions ={
+            {-1,-1}, {0,-1}, {1,-1},
+            {-1,0},          {1,0},
+            {-1,1}, {0,1}, {1,1}
+        };
+
+        int index = rand() % directions.size();
+        int dx = directions[index].first;
+        int dy = directions[index].second;
+
+        int targetX = dx + getX();
+        int targetY = dy + getY();
+
+        if (dx == 0 && dy == 0) {
+            cout << "Staying still is not considered a move!" << endl;
+            return;
+        }
+
+        if (targetX < 0 || targetX >= cols || targetY < 0 || targetY >= row) {
+            cout << "Cannot move out of bounds!" << endl;
+            return;
+        }
+
+        // Check for collision with other robots
+        for (Robot* r : robots) {
+            if (r != this && r->isAlive() && r->getX() == targetX && r->getY() == targetY) {
+                cout << "Cannot move to (" << targetX << ", " << targetY << ") - blocked by another robot at ("
+                    << r->getX() << ", " << r->getY() << ")" << endl;
+                return;
+            }
+        }
+            setPosition(targetX, targetY);
+         cout << "Moved to new position: (" << targetX << ", " << targetY << ")" << endl;
+    };
+
+    
+    virtual void look(vector<Robot*>& robots) {
+        vector<pair<int,int>> directions ={
+            {-1,-1}, {0,-1}, {1,-1},
+            {-1,0},          {1,0},
+            {-1,1}, {0,1}, {1,1}
+        };
+
+        cout << "Looking around (" << getX() << ", " << getY() << "):" << endl;
+
+        for (auto dir : directions) {
+            int targetX = dir.first + getX();
+            int targetY = dir.second + getY();
+
+            if (targetX < 0 || targetX >= cols || targetY < 0 || targetY >= row) {
+                cout << "Coordinate (" << targetX << ", " << targetY << ") is out of bounds." << endl;
+                continue;
+            }
+
+            bool foundRobot = false;
+            for (Robot* r : robots) {
+                if (r->isAlive() && r->getX() == targetX && r->getY() == targetY) {
+                    foundRobot = true;
+                    break;
+                }
+            }
+
+            if (foundRobot) {
+                cout << "There's a robot at coordinate (" << targetX << ", " << targetY << ")." << endl;
+            } else {
+                cout << "Coordinate (" << targetX << ", " << targetY << ") is empty." << endl;
+            }
+        }
+    };
     
     virtual void fire(vector<Robot*>& robots) {
         vector<pair<int,int>> directions ={
@@ -263,6 +357,7 @@ public:
                         cout << "🛡️ Target is hiding. Shot missed." << endl;
                         return;
                     }
+                    cout << "Firing at (" << targetX << ", " << targetY << ")... ";
                     r->takeDamage();
                     cout << "Hit"<<endl;
                     cout << r->getX() << ", " << r->getY() << "Robot destroyed!" << endl;
