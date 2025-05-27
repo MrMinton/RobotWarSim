@@ -141,6 +141,10 @@ int main(){
                 cout << "💀 DEAD";
             cout << endl;
         }
+        
+         for (Robot* r : robots) {
+                r->startNewTurn();
+            }
 
         int aliveCount = 0;
         for (Robot* r : robots) {

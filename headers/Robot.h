@@ -12,8 +12,26 @@ private:
     int x, y;
     int lives =3;
     int shells =10;
+    bool hitlastturn = false;
+    bool HitThisTurn = false;
+
 
 public:
+    void startNewTurn() { 
+        hitlastturn = HitThisTurn;
+        HitThisTurn = false;           
+    }
+    void resetHit(){
+        
+        hitlastturn = false;
+    }
+    bool RecentlyHit() const { 
+        return hitlastturn; 
+    }
+    bool wasHit(){
+        return HitThisTurn;
+    }
+
     Robot(){};
     Robot(int x_coord,int y_coord){
         x = x_coord;
@@ -46,12 +64,14 @@ public:
         return alive;
     }
 
-    bool selfDestruct(){
+    void selfDestruct(){
         alive = false;
         lives--;
     }
+    
     void takeDamage() {
         lives--;
+        HitThisTurn = true;
         if (lives <= 0) {
             alive = false;
             cout << "Robot " << name << " has been destroyed!" << endl;
