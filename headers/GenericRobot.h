@@ -224,6 +224,10 @@ public:
             int decision = rand_num;
             switch(decision){
                 case 0:
+                    minusShells();
+                    // for (Robot* r : robots) {
+                    //     r->getShells();
+                    // }
                     fire(robots);
                     return;
                 case 1:
@@ -341,14 +345,13 @@ public:
 
         int targetX = dx + getX();
         int targetY = dy + getY();
+        int hitprob = rand() % 100;
 
         if (targetX < 0 || targetX >= cols || targetY < 0 || targetY>=row){
             cout << "Out of bounds"<< endl;
-            // shouldn't here have return; ?
+            return;
         }
 
-        int hitprob = rand() % 100;
-        
         if (hitprob < 70){
             for (Robot* r : robots) {
                 if (r->isAlive() && r->getX() == targetX && r->getY() == targetY) {
@@ -357,17 +360,22 @@ public:
                         cout << "🛡️ Target is hiding. Shot missed." << endl;
                         return;
                     }
-                    cout << "Firing at (" << targetX << ", " << targetY << ")... ";
+                    cout << "Firing at (" << targetX << ", " << targetY << ")... "<<endl;
                     r->takeDamage();
-                    cout << "Hit"<<endl;
-                    cout << r->getX() << ", " << r->getY() << "Robot destroyed!" << endl;
+                    cout << "Remaining Shells: "<< r->getShells() <<endl;
                     upgrade();                        
                     break;
                     }
+                else{
+                    cout<< "Miss"<<endl;
+                    cout << "Remaining Shells: "<< r->getShells() <<endl;
+                    break;
                 }
             }
+            }
         else {
-            cout << "Miss"<<endl;
+            cout << "Miss coz more than 70"<<endl;
+            cout << "Remaining Shells: "<< getShells() <<endl;
         }
     }
 };

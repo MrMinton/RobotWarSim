@@ -120,7 +120,7 @@ int main(){
 
     cout << "--- TESTING FIRE FUNCTION ---" << endl;
     
-    while (currentTurn < totalTurns) {
+    while (currentTurn < 5) {
         cout << "\n\n======= TURN #" << currentTurn + 1 << " =======\n";
 
         for (Robot* r : robots) {
@@ -136,7 +136,7 @@ int main(){
         for (Robot* r : robots) {
             cout << " - Robot at (" << r->getX() << ", " << r->getY() << ") ";
             if (r->isAlive())
-                cout << "is alive with " << r->getLive() << " lives";
+                cout << "is alive with " << r->getLive() << " lives and remaining shells: "<< r->getShells();
             else
                 cout << "💀 DEAD";
             cout << endl;
@@ -164,7 +164,7 @@ int main(){
     for (Robot* r : robots) {
         cout << " - Robot at (" << r->getX() << ", " << r->getY() << ") ";
         if (r->isAlive())
-            cout << "SURVIVED with " << r->getLive() << " lives";
+            cout << "SURVIVED with " << r->getLive() << " lives and remaining shells: "<<r->getShells();
         else
             cout << "was DESTROYED.";
         cout << endl;
