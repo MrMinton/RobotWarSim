@@ -192,55 +192,56 @@ public:
 
     virtual void think(vector<Robot*>& robots){
         reveal();
-        
-    if (wasHit()) {
-        cout << "💥 Robot at (" << getX() << ", " << getY() << ") u r eliminated and skip action this turn.\n";
+        if (wasHit()) {
+            cout << "💥 Robot at (" << getX() << ", " << getY() << ") u r eliminated and skip action this turn.\n";
 
-        int newX, newY, attempts = 0;
-        do {
-            newX = rand() % cols;
-            newY = rand() % row;
-            bool occupied = false;
+            int newX, newY, attempts = 0;
+            do {
+                newX = rand() % cols;
+                newY = rand() % row;
+                bool occupied = false;
 
-            for (Robot* r : robots) {
-                if (r != this && r->isAlive() && r->getX() == newX && r->getY() == newY) {
-                    occupied = true;
-                    break;
+                for (Robot* r : robots) {
+                    if (r != this && r->isAlive() && r->getX() == newX && r->getY() == newY) {
+                        occupied = true;
+                        break;
+                    }
                 }
-            }
 
-            if (!occupied) break;
-            attempts++;
-        } while (attempts < 10);
+                if (!occupied) break;
+                attempts++;
+            } while (attempts < 10);
 
-        setPosition(newX, newY); 
-        cout << "💫 Robot respawned to new position (" << newX << ", " << newY << ")\n";  
-        resetHit();
-        return;  // skip the rest of the turn
-    }
-    if (RecentlyHit()) {
-
-        int newX, newY, attempts = 0;
-        do {
-            newX = rand() % cols;
-            newY = rand() % row;
-            bool occupied = false;
-
-            for (Robot* r : robots) {
-                if (r != this && r->isAlive() && r->getX() == newX && r->getY() == newY) {
-                    occupied = true;
-                    break;
-                }
-            }
-
-            if (!occupied) break;
-            attempts++;
-        } while (attempts < 10);
-
-        setPosition(newX, newY); 
-        cout << "💫 Robot respawned to new position (" << newX << ", " << newY << ")\n";  
-        resetHit();
+            setPosition(newX, newY); 
+            cout << "💫 Robot respawned to new position (" << newX << ", " << newY << ")\n";  
+            resetHit();
+            return;  // skip the rest of the turn
         }
+        if (RecentlyHit()) {
+
+            int newX, newY, attempts = 0;
+            do {
+                newX = rand() % cols;
+                newY = rand() % row;
+                bool occupied = false;
+
+                for (Robot* r : robots) {
+                    if (r != this && r->isAlive() && r->getX() == newX && r->getY() == newY) {
+                        occupied = true;
+                        break;
+                    }
+                }
+
+                if (!occupied) break;
+                attempts++;
+            } while (attempts < 10);
+
+            setPosition(newX, newY); 
+            cout << "💫 Robot respawned to new position (" << newX << ", " << newY << ")\n";  
+            resetHit();
+            }
+        cout << "\n🤖 Robot at (" << getX() << ", " << getY() << ") is taking its turn...\n";
+        
 
         while(true) {
             int rand_num = rand()%5;

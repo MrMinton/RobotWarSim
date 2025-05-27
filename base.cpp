@@ -82,7 +82,7 @@ int main(){
     string type,namabot;
     int xcord,ycord;
     fstream myFile;
-    int totalTurns = 50;
+    int totalTurns = 20;
     int currentTurn = 0;
 
 
@@ -120,13 +120,13 @@ int main(){
 
     cout << "--- TESTING FIRE FUNCTION ---" << endl;
     
-    while (currentTurn < 50) {
+    while (currentTurn < 20) {
         cout << "\n\n======= TURN #" << currentTurn + 1 << " =======\n";
 
         for (Robot* r : robots) {
             if (r->isAlive()) {
                 if (ThinkingRobot* thinker = dynamic_cast<ThinkingRobot*>(r)) {
-                    cout << "\n🔁 Robot at (" << r->getX() << ", " << r->getY() << ") is taking its turn...\n";
+                    // cout << "\n🔁 Robot at (" << r->getX() << ", " << r->getY() << ") is taking its turn...\n";ljf change this for spawn
                     thinker->think(robots);
                 }
             }
