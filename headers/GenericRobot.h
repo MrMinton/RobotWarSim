@@ -225,9 +225,9 @@ public:
             switch(decision){
                 case 0:
                     minusShells();
-                    // for (Robot* r : robots) {
-                    //     r->getShells();
-                    // }
+                    for (Robot* r : robots) {
+                        r->getShells();
+                    }
                     fire(robots);
                     return;
                 case 1:
@@ -348,7 +348,7 @@ public:
         int hitprob = rand() % 100;
 
         if (targetX < 0 || targetX >= cols || targetY < 0 || targetY>=row){
-            cout << "Out of bounds"<< endl;
+            cout << "Out of bounds. Therefore, bullet wasted"<< endl;
             return;
         }
 
@@ -362,13 +362,13 @@ public:
                     }
                     cout << "Firing at (" << targetX << ", " << targetY << ")... "<<endl;
                     r->takeDamage();
-                    cout << "Remaining Shells: "<< r->getShells() <<endl;
+                    cout << "Remaining Shells: "<< getShells() <<endl;
                     upgrade();                        
                     break;
                     }
                 else{
                     cout<< "Miss"<<endl;
-                    cout << "Remaining Shells: "<< r->getShells() <<endl;
+                    cout << "Remaining Shells: "<< getShells() <<endl;
                     break;
                 }
             }
