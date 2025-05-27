@@ -47,7 +47,7 @@ public:
         return y;
     }
 
-    int setPosition(int nX, int nY) {
+    void setPosition(int nX, int nY) {
         x = nX;
         y = nY;
     }
