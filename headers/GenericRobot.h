@@ -150,31 +150,29 @@ public:
         }
 
         if (hitprob < 70) {
-            bool targetFound = false;
             for (Robot* r : robots) {
                 if (r->isAlive() && r->getX() == targetX && r->getY() == targetY) {
-                    targetFound = true;
                     GenericRobot* gr = dynamic_cast<GenericRobot*>(r);
                     if (gr && gr->currentlyHiding()) {
                         cout << "🛡️ Target is hiding. Shot missed." << endl;
                         minusShells();
                         return;
-                    }
-                    cout << "Long Shotting at (" << targetX << ", " << targetY << ")... " << endl;
-                    r->takeDamage();
-                    cout << "🎯 Hit!" << endl;
+                    } else {
+                        cout << "Long Shotting at (" << targetX << ", " << targetY << ")... " << endl;
+                        r->takeDamage();
+                        cout << "🎯 Long Shot Hit!" << endl;
+                        minusShells();
+                        cout << "Remaining Shells: " << getShells() << endl;
+                        if (isAlive()) {
+                            upgrade();
+                        }
+                        break;
+                    }                    
+                } else {
+                    cout << "Miss, no target there." << endl;
                     minusShells();
                     cout << "Remaining Shells: " << getShells() << endl;
-                    if (isAlive()) {
-                        upgrade();
-                    }
-                    break;
                 }
-            }
-            if (!targetFound) {
-                cout << "Miss, no target there." << endl;
-                minusShells();
-                cout << "Remaining Shells: " << getShells() << endl;
             }
         } else {
             cout << "Miss coz more than 70, unlucky." << endl;
@@ -216,43 +214,39 @@ public:
             return;
         }
 
-        bool targetfound = false;
+        cout << "SemiAutoShot Activated" << endl;
+
         for (Robot* r : robots) {
             if (r->isAlive() && r->getX() == targetX && r->getY() == targetY) {
-                targetfound = true;
                 GenericRobot* gr = dynamic_cast<GenericRobot*>(r);
                 if (gr && gr->currentlyHiding()) {
                     cout << "🛡️ Target is hiding. Shot missed." << endl;
                     minusShells();
                     return;
-                }
-
-
-                for(int i = 0; i < 3 && r->isAlive(); ++i) {
-                    int hitProb = rand() % 100;
-                    cout << "SemiAutoShot at (" << targetX << ", " << targetY << ")... " << endl;
-                    if(hitProb < 70) {
-                        r->takeDamage();
-                        cout << "🎯 Hit!" << endl;
-                        if (isAlive()) {
-                        upgrade();
-                        }
-                        break;
-                    } else {
-                        cout << "Miss Semi Auto Shot" << endl;
-                    }                   
-                }
+                } else {
+                    for(int i = 0; i < 3 && r->isAlive(); ++i) {
+                        int hitProb = rand() % 100;
+                        cout << "SemiAutoShot at (" << targetX << ", " << targetY << ")... " << endl;
+                        if(hitProb < 70) {
+                            r->takeDamage();
+                            cout << "🎯SemiAutoShot Hit!" << endl;
+                            if (isAlive()) {
+                            upgrade();
+                            }
+                            break;
+                        } else {
+                            cout << "Miss SemiAutoShot" << endl;
+                        }                   
+                    }
+                }                
+            } else {
+                cout << "Miss, no target there." << endl;
+                minusShells();
+                cout << "Remaining Shells: " << getShells() << endl;
             }
             break;
-        }
-
-        if (!targetfound) {
-            cout << "Miss, no target there." << endl;
-            minusShells();
-            cout << "Remaining Shells: " << getShells() << endl;
-        }   
-
-        minusShells();
+        } 
+        minusShells(); //minus shell after shooting 3 semiauto bullet.
         cout << "Remaining Shells: " << getShells() << endl;
     }
 
@@ -531,10 +525,8 @@ public:
         }
 
         if (hitprob < 70) {
-            bool targetFound = false;
             for (Robot* r : robots) {
                 if (r->isAlive() && r->getX() == targetX && r->getY() == targetY) {
-                    targetFound = true;
                     GenericRobot* gr = dynamic_cast<GenericRobot*>(r);
                     if (gr && gr->currentlyHiding()) {
                         cout << "🛡️ Target is hiding. Shot missed." << endl;
@@ -550,13 +542,12 @@ public:
                         upgrade();
                     }
                     break;
+                } else {
+                    cout << "Miss, no target there." << endl;
+                    minusShells();
+                    cout << "Remaining Shells: " << getShells() << endl;
                 }
             }            
-            if (!targetFound) {
-                cout << "Miss, no target there." << endl;
-                minusShells();
-                cout << "Remaining Shells: " << getShells() << endl;
-            }
         } else {
             cout << "Miss coz more than 70" << endl;
             cout << "Remaining Shells: " << getShells() << endl;
