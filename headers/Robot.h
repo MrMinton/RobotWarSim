@@ -56,6 +56,14 @@ public:
         return name;
     }
 
+    void setType(string t){
+        type = t;
+    }
+
+    string getType() {
+        return type;
+    }
+
     int getShells(){
         return shells;
     }
