@@ -39,16 +39,19 @@ public:
 
     GenericRobot(int x, int y) : Robot(x, y), MovingRobot(x, y), ShootingRobot(x, y), SeeingRobot(x, y), ThinkingRobot(x, y) {}
 
+
     void setHideBot(bool val) {
         isHideBot = val;
+        setType("HideBot");
         if (val) hideCount = 3;
     }
 
     void reveal() {
         isHiding = false;
-
         if (hideCount <= 0) {
             isHideBot = false;
+        } else if(jumpCount <= 0){
+            isJumpBot = false;
         }
     }
 
@@ -73,10 +76,12 @@ public:
 
     void setJumpBot(bool val) {
         isJumpBot = val;
+        setType("JumpBot");
         if (val) jumpCount = 3;
     }
 
     void jump(vector<Robot*>& robots) {
+
         if (!isJumpBot) {
             return;
         }
@@ -108,25 +113,161 @@ public:
 
     void setLongShotBot(bool val) {
         isLongShotBot = val;
+        setType("LongShotBot");
+    }
+
+    void longShot(vector<Robot*>& robots) {
+
+        vector<pair<int, int>> directions;
+
+        for (int dx = -3; dx <= 3; ++dx) {
+            for (int dy = -3; dy <= 3; ++dy) {
+                if (dx == 0 && dy == 0) continue;
+                if (abs(dx) + abs(dy) <= 3)
+                    directions.push_back({dx, dy});
+            }
+        }
+
+        if (getShells() <= 0) {
+            cout << "Out of shells byebye!" << endl;
+            selfDestruct();
+            return;
+        }
+
+        cout << "Long Shot activated!" << endl;
+
+        int index = rand() % directions.size();
+        int dx = directions[index].first;
+        int dy = directions[index].second;
+
+        int targetX = dx + getX();
+        int targetY = dy + getY();
+        int hitprob = rand() % 100;
+
+        if (targetX < 0 || targetX >= cols || targetY < 0 || targetY >= row) {
+            cout << "Out of bounds. Therefore, bullet wasted" << endl;
+            return;
+        }
+
+        if (hitprob < 70) {
+            bool targetFound = false;
+            for (Robot* r : robots) {
+                if (r->isAlive() && r->getX() == targetX && r->getY() == targetY) {
+                    targetFound = true;
+                    GenericRobot* gr = dynamic_cast<GenericRobot*>(r);
+                    if (gr && gr->currentlyHiding()) {
+                        cout << "🛡️ Target is hiding. Shot missed." << endl;
+                        cout << "Remaining Shells: " << getShells() << endl;
+                        return;
+                    } else {
+                        cout << "Long Shotting at (" << targetX << ", " << targetY << ")... " << endl;
+                        r->takeDamage();
+                        cout << "🎯 Long Shot Hit!" << endl;
+                        cout << "Remaining Shells: " << getShells() << endl;
+                        if (isAlive()) {
+                            upgrade();
+                        }
+                        break;
+                    }                    
+                }
+            }
+            if (!targetFound) {
+                cout << "Miss no robot found at (" << targetX << ", " << targetY << ")" << endl;
+                cout << "Remaining Shells: "<< getShells() <<endl;
+            }
+        } else {
+            cout << "Miss coz more than 70, unlucky." << endl;
+            cout << "Remaining Shells: " << getShells() << endl;
+        }
     }
 
     void setSemiAutoBot(bool val) {
         isSemiAutoBot = val;
+        setType("SemiAutoBot");
+    }
+
+    void semiAutoShot(vector<Robot*>& robots) {
+
+        vector<pair<int,int>> directions = {
+            {-1,-1}, {0,-1}, {1,-1},
+            {-1,0},          {1,0},
+            {-1,1}, {0,1}, {1,1}
+        };
+
+        int index = rand() % directions.size();
+        int dx = directions[index].first;
+        int dy = directions[index].second;
+
+        if (getShells()<=0){
+            cout << "Out of shells byebye!"<<endl;
+            selfDestruct();
+        }
+        if (dx == 0 && dy == 0){
+            cout << "Not allowed to kill urself";
+            return;
+        }
+
+        int targetX = dx + getX();
+        int targetY = dy + getY();
+
+        if (targetX < 0 || targetX >= cols || targetY < 0 || targetY>=row) {
+            cout << "Out of bounds. Therefore, bullet wasted"<< endl;
+            return;
+        }
+
+        cout << "SemiAutoShot Activated" << endl;
+
+        bool targetFound = false;
+        for (Robot* r : robots) {
+            if (r->isAlive() && r->getX() == targetX && r->getY() == targetY) {
+                targetFound = true;
+                GenericRobot* gr = dynamic_cast<GenericRobot*>(r);
+                if (gr && gr->currentlyHiding()) {
+                    cout << "🛡️ Target is hiding. Shot missed." << endl;
+                } else {
+                    for(int i = 0; i < 3 && r->isAlive(); ++i) {
+                        int hitProb = rand() % 100;
+                        cout << "SemiAutoShot at (" << targetX << ", " << targetY << ")... " << endl;
+                        if(hitProb < 70) {
+                            r->takeDamage();
+                            cout << "🎯SemiAutoShot Hit!" << endl;
+                            if (isAlive()) {
+                            upgrade();
+                            }
+                            break;
+                        } else {
+                            cout << "Miss SemiAutoShot" << endl;
+                        }                   
+                    }
+                }
+                break;                
+            }             
+        } 
+        if (!targetFound) {
+            cout << "Miss no robot found at (" << targetX << ", " << targetY << ")" << endl;
+        }
+        cout << "Remaining Shells: " << getShells() << endl;
     }
 
     void setThirtyShotBot(bool val) {
         isThirtyShotBot = val;
+        setType("ThirtyShotBot");
     }
 
     void setScoutBot(bool val) {
         isScoutBot = val;
+        setType("ScoutBot");
     }
 
     void setTrackBot(bool val) {
         isTrackBot = val;
+        setType("TrackBot");
     }
 
     void upgrade() {
+
+        cout << "Attempting Upgrade" << endl;
+
         if (upgradesTaken >= 3){
             cout << "Max upgrades reached, goodjob." << endl;
             return;
@@ -244,10 +385,11 @@ public:
         
 
         while(true) {
-            int rand_num = rand()%5;
+            int rand_num = rand()%7;
             int decision = rand_num;
             switch(decision){
                 case 0:
+                    cout << "Attempting Fire" << endl;
                     minusShells();
                     for (Robot* r : robots) {
                         r->getShells();
@@ -255,23 +397,43 @@ public:
                     fire(robots);
                     return;
                 case 1:
+                    cout << "Attempting Move" << endl;
                     move(robots);
                     return;
                 case 2:
+                    cout << "Attempting Look" << endl;
                     look(robots);
                     return;
                 case 3:
                     if(isHideBot){
+                        cout << "Attempting Hide" << endl;
                         hide();
                         return;
                     }  
                     break;                      
                 case 4:
                     if(isJumpBot){
+                        cout << "Attempting Jump" << endl;
                         jump(robots);
                         return;
                     } 
-                    break;                  
+                    break;  
+                case 5:
+                    if(isLongShotBot){
+                        cout << "Attempting Longshot" << endl;
+                        minusShells();
+                        longShot(robots);
+                        return;
+                    } 
+                    break;
+                 case 6:
+                    if(isSemiAutoBot){
+                        cout << "Attempting SemiautoShot" << endl;
+                        minusShells();
+                        semiAutoShot(robots);
+                        return; 
+                    }
+                    break;              
             }
         }       
     };
@@ -377,27 +539,29 @@ public:
         }
 
         if (hitprob < 70){
+            bool targetFound = false;
             for (Robot* r : robots) {
                 if (r->isAlive() && r->getX() == targetX && r->getY() == targetY) {
+                    targetFound = true;
                     GenericRobot* gr = dynamic_cast<GenericRobot*>(r);
                     if (gr && gr->currentlyHiding()) {
                         cout << "🛡️ Target is hiding. Shot missed." << endl;
+                        cout << "Remaining Shells: " << getShells() << endl;
                         return;
-                    }
-                    cout << "Firing at (" << targetX << ", " << targetY << ")... "<<endl;
-                    r->takeDamage();
-                    cout << "Remaining Shells: "<< getShells() <<endl;
-                    upgrade();                        
-                    break;
-                    }
-                else{
-                    cout<< "Miss"<<endl;
-                    cout << "Remaining Shells: "<< getShells() <<endl;
-                    break;
+                    } else {
+                        cout << "Firing at (" << targetX << ", " << targetY << ")... "<<endl;
+                        r->takeDamage();
+                        cout << "Remaining Shells: "<< getShells() <<endl;
+                        upgrade();                        
+                        break;
+                    }                                    
                 }
-            }
-            }
-        else {
+            } 
+            if (!targetFound) {
+                cout << "Miss no robot found at (" << targetX << ", " << targetY << ")" << endl;
+                cout << "Remaining Shells: "<< getShells() <<endl;
+            }          
+        }else {
             cout << "Miss coz more than 70"<<endl;
             cout << "Remaining Shells: "<< getShells() <<endl;
         }
