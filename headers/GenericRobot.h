@@ -532,16 +532,17 @@ public:
                         cout << "🛡️ Target is hiding. Shot missed." << endl;
                         minusShells();
                         return;
-                    }
-                    cout << "Firing at (" << targetX << ", " << targetY << ")... " << endl;
-                    r->takeDamage();
-                    cout << "🎯 Hit!" << endl;
-                    minusShells();
-                    cout << "Remaining Shells: " << getShells() << endl;
-                    if (isAlive()) {
-                        upgrade();
-                    }
-                    break;
+                    } else {
+                        cout << "Firing at (" << targetX << ", " << targetY << ")... " << endl;
+                        r->takeDamage();
+                        cout << "🎯 Hit!" << endl;
+                        minusShells();
+                        cout << "Remaining Shells: " << getShells() << endl;
+                        if (isAlive()) {
+                            upgrade();
+                        }
+                        break;
+                    }                    
                 } else {
                     cout << "Miss, no target there." << endl;
                     minusShells();
