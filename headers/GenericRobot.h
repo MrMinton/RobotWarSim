@@ -361,6 +361,30 @@ public:
             return; 
         }
 
+        if (RecentlyHit()) {
+
+        int newX, newY, attempts = 0;
+        do {
+            newX = rand() % cols;
+            newY = rand() % row;
+            bool occupied = false;
+
+            for (Robot* r : robots) {
+                if (r != this && r->isAlive() && r->getX() == newX && r->getY() == newY) {
+                    occupied = true;
+                    break;
+                }
+            }
+
+            if (!occupied) break;
+            attempts++;
+        } while (attempts < 10);
+
+        setPosition(newX, newY); 
+        cout << "💫 Robot respawned to new position (" << newX << ", " << newY << ")\n";  
+        resetHit();
+        }
+
         while(true) {
             int rand_num = rand()%7;
             int decision = rand_num;
