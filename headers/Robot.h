@@ -62,6 +62,9 @@ public:
     
     void minusShells(){
         --shells;
+        if(shells <= 0){
+            selfDestruct();
+        }
     }
 
     bool isAlive(){
@@ -83,9 +86,7 @@ public:
             cout << "Robot " << getX()<<","<<getY() << " was hit! Lives left: " << lives << endl;
         }
     }
-    // void upgrade(){
-        
-    // }
+    
     int getLive(){
         return lives;
     }
