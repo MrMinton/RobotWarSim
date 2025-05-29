@@ -71,7 +71,9 @@ public:
     void minusShells(){
         --shells;
     }
-
+    void thirtyShells(){
+        shells = 30;
+    }
     bool isAlive(){
         return alive;
     }

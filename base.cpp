@@ -120,7 +120,7 @@ int main(){
 
     cout << "--- TESTING FIRE FUNCTION ---" << endl;
     
-    while (currentTurn < 20) {
+    while (currentTurn < 100) {
         cout << "\n\n======= TURN #" << currentTurn + 1 << " =======\n";
 
         for (Robot* r : robots) {

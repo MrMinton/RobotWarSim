@@ -253,7 +253,11 @@ public:
         isThirtyShotBot = val;
         setType("ThirtyShotBot");
     }
-
+    void thirtyShotBot(vector<Robot*>& robots){
+        for (Robot* r: robots){
+            thirtyShells();
+        }
+    }
     void setScoutBot(bool val) {
         isScoutBot = val;
         setType("ScoutBot");
@@ -301,7 +305,7 @@ public:
             }
             case 1: { //for shooting
                 upgradedShooting = true;
-                int moveChoice = rand() % 3;
+                int moveChoice = rand() % 2;
                 if(moveChoice == 0){
                     setLongShotBot(true);
                     cout << "Upgraded to LongShotBot" << endl;
@@ -309,7 +313,7 @@ public:
                     setSemiAutoBot(true);
                     cout << "Upgraded to SemiAutoBot" << endl;
                 } else if(moveChoice == 2) {
-                    setThirtyShotBot(true);
+                    thirtyShells();
                     cout << "Upgraded to ThirtyShotBot " << endl;
                 }
                 break;
@@ -330,32 +334,11 @@ public:
         upgradesTaken++;
     }
 
-
     virtual void think(vector<Robot*>& robots){
         reveal();
         if (wasHit()) {
+            cout << endl ;
             cout << "💥 Robot at (" << getX() << ", " << getY() << ") u r eliminated and skip action this turn.\n";
-
-            int newX, newY, attempts = 0;
-            do {
-                newX = rand() % cols;
-                newY = rand() % row;
-                bool occupied = false;
-
-                for (Robot* r : robots) {
-                    if (r != this && r->isAlive() && r->getX() == newX && r->getY() == newY) {
-                        occupied = true;
-                        break;
-                    }
-                }
-
-                if (!occupied) break;
-                attempts++;
-            } while (attempts < 10);
-
-            setPosition(newX, newY); 
-            cout << "💫 Robot respawned to new position (" << newX << ", " << newY << ")\n";  
-            resetHit();
             return;  // skip the rest of the turn
         }
         if (RecentlyHit()) {
@@ -377,7 +360,10 @@ public:
                 attempts++;
             } while (attempts < 10);
 
-            setPosition(newX, newY); 
+            cout << endl;
+            // cout << "💥 Robot at (" << getX() << ", " << getY() << ") is eliminated last turn.\n";
+            setPosition(newX, newY);
+            cout << endl;
             cout << "💫 Robot respawned to new position (" << newX << ", " << newY << ")\n";  
             resetHit();
             }
@@ -385,7 +371,7 @@ public:
         
 
         while(true) {
-            int rand_num = rand()%7;
+            int rand_num = rand() % 8;
             int decision = rand_num;
             switch(decision){
                 case 0:
@@ -426,14 +412,20 @@ public:
                         return;
                     } 
                     break;
-                 case 6:
+                case 6:
                     if(isSemiAutoBot){
                         cout << "Attempting SemiautoShot" << endl;
                         minusShells();
                         semiAutoShot(robots);
                         return; 
                     }
-                    break;              
+                    break;
+                case 7:
+                    if (isThirtyShotBot){
+                        cout << "Replacing current shells with 30 Shells hehe" << endl;
+                        thirtyShotBot(robots);
+                        return;
+                    }       
             }
         }       
     };
@@ -562,7 +554,7 @@ public:
                 cout << "Remaining Shells: "<< getShells() <<endl;
             }          
         }else {
-            cout << "Miss coz more than 70"<<endl;
+            cout << "Miss go cry abt it lol"<<endl;
             cout << "Remaining Shells: "<< getShells() <<endl;
         }
     }
