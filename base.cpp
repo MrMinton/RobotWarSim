@@ -5,15 +5,16 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include "headers/Battlefield.h"
 #include "headers/ShootingRobot.h"
 #include "headers/SeeingRobot.h"
 #include "headers/ThinkingRobot.h"
 #include "headers/MovingRobot.h"
 #include "headers/GenericRobot.h"
 #include "headers/Robot.h"
-
-
 using namespace std;
+
+Battlefield* GenericRobot::battlefieldPtr = nullptr;
 
 class Parse{
 public:
@@ -24,48 +25,6 @@ public:
         ss >> robot_amount;
         cout << "Robot amount is "<< robot_amount<<endl;
     };
-};
-    
-class Battlefield{
-public:
-    char**a2d;
-    Battlefield(vector<Robot*> &robots){
-        a2d = new char*[row];
-        for (int i = 0; i<row; i++) {
-            a2d[i] = new char[cols];
-        }
-
-        for (int y=0; y<row; y++)
-        {
-            for (int x=0; x<cols; x++){ 
-                a2d[y][x] = '-';
-            }
-        }
-
-        for (Robot* r : robots) {
-            int x = r->getX();
-            int y = r->getY();
-
-            if (x >= 0 && x < cols && y >= 0 && y < row) {
-                a2d[y][x] = 'R';
-            } else {
-                cout << "Skipping robot at (" << x << ", " << y << ") — out of bounds\n";
-            }
-        }
-
-        for (int y=0; y < row; y++){
-            for(int x=0; x < cols; x++){
-                cout << a2d[y][x] << " ";
-            }
-            cout<<endl;
-            }
-        }
-    ~Battlefield(){
-        for (int i=0;i<row;i++){
-            delete[] a2d[i];
-        }
-        delete[] a2d;
-    }
 };
 
 void parseBattlefieldGrid(string &line){
@@ -117,10 +76,19 @@ int main(){
     }
 
     Battlefield b1(robots);
+    GenericRobot::battlefieldPtr = &b1;
 
+    // 🚀 Force ScoutBot upgrade for testing:
+    // for (Robot* r : robots) {
+    //     if (GenericRobot* gr = dynamic_cast<GenericRobot*>(r)) {
+    //         gr->setScoutBot(true);  // 👈 Force set it ON!
+    //         cout << "✅ ScoutBot forced ON for testing!\n";
+    //     }
+    // }
+    
     cout << "--- TESTING FIRE FUNCTION ---" << endl;
     
-    while (currentTurn < 100) {
+    while (currentTurn < 10) {
         cout << "\n\n======= TURN #" << currentTurn + 1 << " =======\n";
 
         for (Robot* r : robots) {

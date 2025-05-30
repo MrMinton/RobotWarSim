@@ -3,6 +3,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include "Battlefield.h"  
 #include "MovingRobot.h"
 #include "ShootingRobot.h"
 #include "SeeingRobot.h"
@@ -33,10 +34,12 @@ private:
     int hideCount = 0;
     bool isHiding = false;
     int jumpCount= 0;
+    int scoutCount = 0;
 
 
 public:
 
+    static Battlefield* battlefieldPtr;
     GenericRobot(int x, int y) : Robot(x, y), MovingRobot(x, y), ShootingRobot(x, y), SeeingRobot(x, y), ThinkingRobot(x, y) {}
 
 
@@ -52,6 +55,8 @@ public:
             isHideBot = false;
         } else if(jumpCount <= 0){
             isJumpBot = false;
+        } else if (scoutCount <= 0){
+            isScoutBot = false;
         }
     }
 
@@ -60,18 +65,18 @@ public:
     }
 
     void hide() {
-    if (!isHideBot) {
-        return;
-    }
+        if (!isHideBot) {
+            return;
+        }
 
-    if (hideCount <= 0) {
-        cout << "No hides left." << endl;
-        return;
-    }
+        if (hideCount <= 0) {
+            cout << "No hides left." << endl;
+            return;
+        }
 
-    isHiding = true;
-    hideCount--;
-    cout << "Robot is now hiding. Hides left: " << hideCount << endl;
+        isHiding = true;
+        hideCount--;
+        cout << "Robot is now hiding. Hides left: " << hideCount << endl;
     }
 
     void setJumpBot(bool val) {
@@ -261,7 +266,33 @@ public:
     void setScoutBot(bool val) {
         isScoutBot = val;
         setType("ScoutBot");
+        if (val){
+            scoutCount =3;
+        }
     }
+
+    void scoutbot(vector<Robot*>& robots) {
+        if (!isScoutBot || battlefieldPtr == nullptr) return;
+
+        if (scoutCount <= 0) {
+            cout << "🛑 ScoutBot ability used up! No more uses left.\n";
+            return;
+        }
+
+        scoutCount--;  // use one charge
+
+        battlefieldPtr->refresh(robots);  // ✅ Update battlefield to current state
+
+        cout << "🛰️ ScoutBot Activated! Battlefield overview:\n";
+
+        for (int y = 0; y < row; y++) {
+            for (int x = 0; x < cols; x++) {
+                cout << battlefieldPtr->a2d[y][x] << " ";
+            }
+            cout << endl;
+        }
+    }
+
 
     void setTrackBot(bool val) {
         isTrackBot = val;
@@ -320,7 +351,7 @@ public:
             }
             case 2: { //for seeing
                 upgradedSeeing = true;
-                int moveChoice = rand() % 2;
+                int moveChoice = 0;
                 if(moveChoice == 0){
                     setScoutBot(true);
                     cout << "Upgraded to ScoutBot" << endl;
@@ -371,7 +402,7 @@ public:
         
 
         while(true) {
-            int rand_num = rand() % 8;
+            int rand_num = rand() % 9;
             int decision = rand_num;
             switch(decision){
                 case 0:
@@ -425,7 +456,15 @@ public:
                         cout << "Replacing current shells with 30 Shells hehe" << endl;
                         thirtyShotBot(robots);
                         return;
-                    }       
+                    }
+                    break;
+                case 8:
+                    if(isScoutBot){
+                        cout << "Attempting ScoutBot" << endl;
+                        scoutbot(robots);
+                        return;
+                    }
+                    break;
             }
         }       
     };
