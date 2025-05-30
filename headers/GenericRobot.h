@@ -3,6 +3,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <algorithm>
 #include "Battlefield.h"  
 #include "MovingRobot.h"
 #include "ShootingRobot.h"
@@ -35,6 +36,8 @@ private:
     bool isHiding = false;
     int jumpCount= 0;
     int scoutCount = 0;
+    int trackCount = 0;
+    vector<Robot*> trackedRobots;
 
 
 public:
@@ -122,6 +125,9 @@ public:
     }
 
     void longShot(vector<Robot*>& robots) {
+        if (!isLongShotBot) {
+            return;
+        }
 
         vector<pair<int, int>> directions;
 
@@ -192,6 +198,10 @@ public:
     }
 
     void semiAutoShot(vector<Robot*>& robots) {
+
+        if (!isSemiAutoBot) {
+            return;
+        }
 
         vector<pair<int,int>> directions = {
             {-1,-1}, {0,-1}, {1,-1},
@@ -297,6 +307,78 @@ public:
     void setTrackBot(bool val) {
         isTrackBot = val;
         setType("TrackBot");
+        if (val){
+            trackCount = 3;
+        }
+    }
+
+    void trackBot(vector<Robot*>& robots){
+
+        if (!isTrackBot) {
+            return;
+        }
+
+        if (trackCount <= 0) {
+            cout << "No tracks left." << endl;
+            return;
+        }
+
+        vector<pair<int,int>> directions ={
+            {-1,-1}, {0,-1}, {1,-1},
+            {-1,0},          {1,0},
+            {-1,1}, {0,1}, {1,1}
+        };
+
+        int index = rand() % directions.size();
+        int dx = directions[index].first;
+        int dy = directions[index].second;
+
+        int targetX = dx + getX();
+        int targetY = dy + getY();
+
+        if (dx == 0 && dy == 0) {
+            cout << "Staying still is not considered a move!" << endl;
+            return;
+        }
+
+        if (targetX < 0 || targetX >= cols || targetY < 0 || targetY >= row) {
+            cout << "Coordinate (" << targetX << ", " << targetY << ") is out of bounds." << endl;
+
+        }
+
+        bool foundRobot = false;
+        for (Robot* r : robots) {
+            if (r->isAlive() && r->getX() == targetX && r->getY() == targetY) {
+                foundRobot = true;
+                cout << "👀 Robot spotted at (" << targetX << ", " << targetY << ")." << endl;
+
+                if (find(trackedRobots.begin(), trackedRobots.end(), r) == trackedRobots.end()) {
+                    trackedRobots.push_back(r);
+                    trackCount--;
+                    cout << "📍 Tracker planted. Trackers left: " << trackCount << endl;                        
+                } else if (trackCount == 0) {
+                    cout << "🔁 Already tracking this robot." << endl;
+                }
+
+                break; 
+            }
+        }
+
+        if (!foundRobot) {
+            cout << "Coordinate (" << targetX << ", " << targetY << ") is empty." << endl;
+        }
+    }
+
+    void displayTrackedRobots() {
+        cout << endl;
+        cout << "📡 Currently Tracked Robots:" << endl;
+        for (Robot* r : trackedRobots) {
+            if (r->isAlive()) {
+                cout << "Robot at (" << r->getX() << ", " << r->getY() << ")" << endl;
+            } else {
+                cout << "Robot previously tracked at (" << r->getX() << ", " << r->getY() << ") was destroyed" << endl;
+            }
+        }
     }
 
     void upgrade() {
@@ -366,7 +448,13 @@ public:
     }
 
     virtual void think(vector<Robot*>& robots){
+        
+        if(isTrackBot){
+            displayTrackedRobots();
+        }
+        
         reveal();
+
         if (wasHit()) {
             cout << endl ;
             cout << "💥 Robot at (" << getX() << ", " << getY() << ") u r eliminated and skip action this turn.\n";
@@ -402,7 +490,7 @@ public:
         
 
         while(true) {
-            int rand_num = rand() % 9;
+            int rand_num = rand() % 10;
             int decision = rand_num;
             switch(decision){
                 case 0:
@@ -460,8 +548,15 @@ public:
                     break;
                 case 8:
                     if(isScoutBot){
-                        cout << "Attempting ScoutBot" << endl;
+                        cout << "Attempting Scouting" << endl;
                         scoutbot(robots);
+                        return;
+                    }
+                    break;
+                case 9:
+                    if(isTrackBot){
+                        cout << "Attempting Tracking" << endl;
+                        trackBot(robots);
                         return;
                     }
                     break;
@@ -599,12 +694,3 @@ public:
     }
 };
 
-
-//performupgrade(){
-
-
-//Hidebot(){}
-
-
-
-// randomising stuff HIdebot HideBot();}
