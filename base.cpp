@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -43,6 +44,14 @@ int main(){
     fstream myFile;
     int totalTurns = 20;
     int currentTurn = 0;
+
+    vector<int> randomSpawnTurns;
+    while (randomSpawnTurns.size() < 3) {
+        int t = rand() % 10 + 1; // Random turns from 1 to 9
+        if (find(randomSpawnTurns.begin(), randomSpawnTurns.end(), t) == randomSpawnTurns.end()) {
+            randomSpawnTurns.push_back(t);
+        }
+    }
 
 
     myFile.open("gameconditions.txt", ios::in);
@@ -90,6 +99,18 @@ int main(){
     
     while (currentTurn < 10) {
         cout << "\n\n======= TURN #" << currentTurn + 1 << " =======\n";
+        // 🆕 Spawn a GenericRobot at random turns
+        if (find(randomSpawnTurns.begin(), randomSpawnTurns.end(), currentTurn + 1) != randomSpawnTurns.end()) {
+            int randX = rand() % cols;
+            int randY = rand() % row;
+
+            Robot* newBot = new GenericRobot(randX, randY);
+            robots.push_back(newBot);
+            cout << "⚠️ Attention: Random GenericRobot added in at (" << randX << ", " << randY << ")!\n";
+
+            // Remove this turn so it doesn't happen again
+            randomSpawnTurns.erase(remove(randomSpawnTurns.begin(), randomSpawnTurns.end(), currentTurn + 1), randomSpawnTurns.end());
+        }
 
         for (Robot* r : robots) {
             if (r->isAlive()) {
