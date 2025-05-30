@@ -33,9 +33,10 @@ public:
     }
 
     Robot(){};
-    Robot(int x_coord,int y_coord){
+    Robot(string nama, int x_coord,int y_coord){
         x = x_coord;
         y = y_coord;
+        name = nama;
     }
     virtual ~Robot();
 

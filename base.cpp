@@ -72,7 +72,7 @@ int main(){
                     xcord = rand() % cols;
                     ycord = rand() % row;
                 }
-                robots.push_back(new GenericRobot(xcord,ycord));
+                robots.push_back(new GenericRobot(namabot, xcord,ycord));
             }
         }
     }
@@ -104,7 +104,7 @@ int main(){
             int randX = rand() % cols;
             int randY = rand() % row;
 
-            Robot* newBot = new GenericRobot(randX, randY);
+            Robot* newBot = new GenericRobot(namabot, randX, randY);
             robots.push_back(newBot);
             cout << "⚠️ Attention: Random GenericRobot added in at (" << randX << ", " << randY << ")!\n";
 

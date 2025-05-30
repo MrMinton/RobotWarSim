@@ -43,7 +43,7 @@ private:
 public:
 
     static Battlefield* battlefieldPtr;
-    GenericRobot(int x, int y) : Robot(x, y), MovingRobot(x, y), ShootingRobot(x, y), SeeingRobot(x, y), ThinkingRobot(x, y) {}
+    GenericRobot(string name, int x, int y) : Robot(name, x, y), MovingRobot(name, x, y), ShootingRobot(name, x, y), SeeingRobot(name, x, y), ThinkingRobot(name, x, y) {}
 
 
     void setHideBot(bool val) {
