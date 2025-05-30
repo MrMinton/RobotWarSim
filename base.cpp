@@ -94,6 +94,9 @@ int main(){
     //         cout << "✅ ScoutBot forced ON for testing!\n";
     //     }
     // }
+
+
+    vector<string> namePool = {"Zeta", "Nova", "Cole"};
     
     cout << "--- TESTING FIRE FUNCTION ---" << endl;
     
@@ -101,15 +104,25 @@ int main(){
         cout << "\n\n======= TURN #" << currentTurn + 1 << " =======\n";
         // 🆕 Spawn a GenericRobot at random turns
         if (find(randomSpawnTurns.begin(), randomSpawnTurns.end(), currentTurn + 1) != randomSpawnTurns.end()) {
-            int randX = rand() % cols;
-            int randY = rand() % row;
 
-            Robot* newBot = new GenericRobot(namabot, randX, randY);
-            robots.push_back(newBot);
-            cout << "⚠️ Attention: Random GenericRobot added in at (" << randX << ", " << randY << ")!\n";
+            if (!namePool.empty()) {
+                int randX = rand() % cols;
+                int randY = rand() % row;
 
-            // Remove this turn so it doesn't happen again
-            randomSpawnTurns.erase(remove(randomSpawnTurns.begin(), randomSpawnTurns.end(), currentTurn + 1), randomSpawnTurns.end());
+                int index = rand() % namePool.size();
+                std::string botname = namePool[index];
+                namePool.erase(namePool.begin() + index); 
+
+                Robot* newBot = new GenericRobot(botname, randX, randY);
+                robots.push_back(newBot);
+
+                cout << "⚠️ Attention: Random GenericRobot '" << botname << "' added at (" << randX << ", " << randY << ")!\n";
+
+                // Remove this turn so it doesn't happen again
+                randomSpawnTurns.erase(remove(randomSpawnTurns.begin(), randomSpawnTurns.end(), currentTurn + 1), randomSpawnTurns.end());
+            } else {
+                cout << "🚫 All unique robot names used. No more robots will spawn.\n";
+            }
         }
 
         for (Robot* r : robots) {

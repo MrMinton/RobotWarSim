@@ -27,7 +27,7 @@ public:
             int y = r->getY();
 
             if (x >= 0 && x < cols && y >= 0 && y < row) {
-                a2d[y][x] = 'R';
+                a2d[y][x] = r->getName()[0];;
             } else {
                 cout << "Skipping robot at (" << x << ", " << y << ") — out of bounds\n";
             }
@@ -53,7 +53,7 @@ public:
                 int x = r->getX();
                 int y = r->getY();
                 if (x >= 0 && x < cols && y >= 0 && y < row)
-                    a2d[y][x] = 'R';
+                    a2d[y][x] = r->getName()[0];
             }
         }
     }
