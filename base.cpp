@@ -35,6 +35,27 @@ void parseBattlefieldGrid(string &line){
     ss >> row >> cols;
     // cout << "This is m: "<< m <<" "<< "This is n: "<< n;
 }
+void printGrid(const vector<Robot*>& robots) {
+    vector<vector<string>> grid(row, vector<string>(cols, ".")); // Grid with default "."
+
+    for (Robot* r : robots) {
+        if (r->isAlive()) {
+            int x = r->getX(), y = r->getY();
+            if (x >= 0 && x < cols && y >= 0 && y < row) {
+                grid[y][x] = string(1, toupper(r->getName()[0])); // First letter of name
+            }
+        }
+    }
+
+    cout << "\n🗺️ Battlefield Grid:\n";
+    for (int y = 0; y < row; ++y) {
+        for (int x = 0; x < cols; ++x) {
+            cout << grid[y][x] << " ";
+        }
+        cout << endl;
+    }
+}
+
 
 int main(){
     srand(time(0));
@@ -100,7 +121,7 @@ int main(){
     
     cout << "--- TESTING FIRE FUNCTION ---" << endl;
     
-    while (currentTurn < 10) {
+    while (currentTurn < 100) {
         cout << "\n\n======= TURN #" << currentTurn + 1 << " =======\n";
         // 🆕 Spawn a GenericRobot at random turns
         if (find(randomSpawnTurns.begin(), randomSpawnTurns.end(), currentTurn + 1) != randomSpawnTurns.end()) {
@@ -142,7 +163,10 @@ int main(){
             else
                 cout << "💀 DEAD";
             cout << endl;
+            
         }
+        printGrid(robots);
+            
         
          for (Robot* r : robots) {
                 r->startNewTurn();
