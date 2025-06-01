@@ -458,7 +458,7 @@ public:
 
         if (wasHit()) {
             cout << endl ;
-            cout << "💥 Robot at (" << getX() << ", " << getY() << ") u r eliminated and skip action this turn.\n";
+            cout << "💥 Robot " << getName() << " u r eliminated and skip action this turn.\n";
             return;  // skip the rest of the turn
         }
         if (RecentlyHit()) {
@@ -484,10 +484,11 @@ public:
             // cout << "💥 Robot at (" << getX() << ", " << getY() << ") is eliminated last turn.\n";
             setPosition(newX, newY);
             cout << endl;
-            cout << "💫 Robot respawned to new position (" << newX << ", " << newY << ")\n";  
+            cout << "💫 Robot "<< getName() << " respawned to new position (" << newX << ", " << newY << ")\n";  
             resetHit();
             }
-        cout << "\n🤖 Robot at (" << getX() << ", " << getY() << ") is taking its turn...\n";
+
+        cout << "\n🤖 Robot " << getName() << " is taking its turn...\n";
         
 
         while(true) {

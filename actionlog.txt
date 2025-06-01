@@ -1,35 +1,161 @@
 
 
 ======= TURN #1 =======
-⚠️ Attention: Random GenericRobot 'Cole' added at (0, 2)!
+⚠️ Attention: Random GenericRobot 'Nova' added at (9, 4)!
 
-🤖 Robot at (1, 2) is taking its turn...
+🤖 Robot Kidd is taking its turn...
 Attempting Fire
-Miss no robot found at (2, 2)
+Firing at (1, 1)... 
+Robot 1,1 was hit! Lives left: 2
+Remaining Shells: 9
+Attempting Upgrade
+Upgraded to ScoutBot
+
+💥 Robot Jet u r eliminated and skip action this turn.
+
+🤖 Robot Alpha is taking its turn...
+Attempting Look
+Looking around (0, 2):
+Coordinate (-1, 1) is out of bounds.
+Coordinate (0, 1) is empty.
+There's a robot at coordinate (1, 1).
+Coordinate (-1, 2) is out of bounds.
+There's a robot at coordinate (1, 2).
+Coordinate (-1, 3) is out of bounds.
+Coordinate (0, 3) is empty.
+Coordinate (1, 3) is empty.
+
+🤖 Robot Beta is taking its turn...
+Attempting Look
+Looking around (2, 0):
+Coordinate (1, -1) is out of bounds.
+Coordinate (2, -1) is out of bounds.
+Coordinate (3, -1) is out of bounds.
+Coordinate (1, 0) is empty.
+Coordinate (3, 0) is empty.
+There's a robot at coordinate (1, 1).
+Coordinate (2, 1) is empty.
+Coordinate (3, 1) is empty.
+
+🤖 Robot Sigma is taking its turn...
+Attempting Fire
+Miss no robot found at (5, 1)
 Remaining Shells: 9
 
-🤖 Robot at (1, 1) is taking its turn...
+🤖 Robot Nova is taking its turn...
 Attempting Move
-Moved to new position: (2, 2)
+Moved to new position: (8, 3)
 
-🤖 Robot at (0, 2) is taking its turn...
+📋 Robot Status After Turn 1:
+ - Robot at (1, 2) is alive with 3 lives and remaining shells: 9
+ - Robot at (1, 1) is alive with 2 lives and remaining shells: 10
+ - Robot at (0, 2) is alive with 3 lives and remaining shells: 10
+ - Robot at (2, 0) is alive with 3 lives and remaining shells: 10
+ - Robot at (4, 1) is alive with 3 lives and remaining shells: 9
+ - Robot at (8, 3) is alive with 3 lives and remaining shells: 10
+
+🗺️ Battlefield Grid:
+. . B . . . . . . . 
+. J . . S . . . . . 
+A K . . . . . . . . 
+. . . . . . . . N . 
+. . . . . . . . . . 
+
+
+======= TURN #2 =======
+⚠️ Attention: Random GenericRobot 'Cole' added at (7, 2)!
+
+🤖 Robot Kidd is taking its turn...
 Attempting Fire
-Firing at (1, 2)... 
-Robot 1,2 was hit! Lives left: 2
-Remaining Shells: 9
+Firing at (0, 2)... 
+Robot 0,2 was hit! Lives left: 2
+Remaining Shells: 8
 Attempting Upgrade
 Upgraded to JumpBot
 
-🤖 Robot at (2, 0) is taking its turn...
+
+💫 Robot Jetrespawned to new position (9, 3)
+
+🤖 Robot Jet is taking its turn...
+Attempting Fire
+Miss no robot found at (8, 2)
+Remaining Shells: 9
+
+💥 Robot Alpha u r eliminated and skip action this turn.
+
+🤖 Robot Beta is taking its turn...
+Attempting Fire
+Out of bounds. Therefore, bullet wasted
+
+🤖 Robot Sigma is taking its turn...
+Attempting Look
+Looking around (4, 1):
+Coordinate (3, 0) is empty.
+Coordinate (4, 0) is empty.
+Coordinate (5, 0) is empty.
+Coordinate (3, 1) is empty.
+Coordinate (5, 1) is empty.
+Coordinate (3, 2) is empty.
+Coordinate (4, 2) is empty.
+Coordinate (5, 2) is empty.
+
+🤖 Robot Nova is taking its turn...
 Attempting Fire
 Miss go cry abt it lol
 Remaining Shells: 9
 
-🤖 Robot at (6, 2) is taking its turn...
+🤖 Robot Cole is taking its turn...
 Attempting Move
-Moved to new position: (6, 1)
+Moved to new position: (6, 2)
 
-🤖 Robot at (0, 2) is taking its turn...
+📋 Robot Status After Turn 2:
+ - Robot at (1, 2) is alive with 3 lives and remaining shells: 8
+ - Robot at (9, 3) is alive with 2 lives and remaining shells: 9
+ - Robot at (0, 2) is alive with 2 lives and remaining shells: 10
+ - Robot at (2, 0) is alive with 3 lives and remaining shells: 9
+ - Robot at (4, 1) is alive with 3 lives and remaining shells: 9
+ - Robot at (8, 3) is alive with 3 lives and remaining shells: 9
+ - Robot at (6, 2) is alive with 3 lives and remaining shells: 10
+
+🗺️ Battlefield Grid:
+. . B . . . . . . . 
+. . . . S . . . . . 
+A K . . . . C . . . 
+. . . . . . . . N J 
+. . . . . . . . . . 
+
+
+======= TURN #3 =======
+⚠️ Attention: Random GenericRobot 'Zeta' added at (6, 1)!
+
+🤖 Robot Kidd is taking its turn...
+Attempting Look
+Looking around (1, 2):
+Coordinate (0, 1) is empty.
+Coordinate (1, 1) is empty.
+Coordinate (2, 1) is empty.
+There's a robot at coordinate (0, 2).
+Coordinate (2, 2) is empty.
+Coordinate (0, 3) is empty.
+Coordinate (1, 3) is empty.
+Coordinate (2, 3) is empty.
+
+🤖 Robot Jet is taking its turn...
+Attempting Look
+Looking around (9, 3):
+Coordinate (8, 2) is empty.
+Coordinate (9, 2) is empty.
+Coordinate (10, 2) is out of bounds.
+There's a robot at coordinate (8, 3).
+Coordinate (10, 3) is out of bounds.
+Coordinate (8, 4) is empty.
+Coordinate (9, 4) is empty.
+Coordinate (10, 4) is out of bounds.
+
+
+💫 Robot Alpharespawned to new position (0, 2)
+
+🤖 Robot Alpha is taking its turn...
 Attempting Look
 Looking around (0, 2):
 Coordinate (-1, 1) is out of bounds.
@@ -41,50 +167,7 @@ Coordinate (-1, 3) is out of bounds.
 Coordinate (0, 3) is empty.
 Coordinate (1, 3) is empty.
 
-📋 Robot Status After Turn 1:
- - Robot at (1, 2) is alive with 2 lives and remaining shells: 9
- - Robot at (2, 2) is alive with 3 lives and remaining shells: 10
- - Robot at (0, 2) is alive with 3 lives and remaining shells: 9
- - Robot at (2, 0) is alive with 3 lives and remaining shells: 9
- - Robot at (6, 1) is alive with 3 lives and remaining shells: 10
- - Robot at (0, 2) is alive with 3 lives and remaining shells: 10
-
-🗺️ Battlefield Grid:
-. . B . . . . . . . 
-. . . . . . S . . . 
-C K J . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-
-
-======= TURN #2 =======
-
-
-💫 Robot respawned to new position (7, 1)
-
-🤖 Robot at (7, 1) is taking its turn...
-Attempting Look
-Looking around (7, 1):
-Coordinate (6, 0) is empty.
-Coordinate (7, 0) is empty.
-Coordinate (8, 0) is empty.
-There's a robot at coordinate (6, 1).
-Coordinate (8, 1) is empty.
-Coordinate (6, 2) is empty.
-Coordinate (7, 2) is empty.
-Coordinate (8, 2) is empty.
-
-🤖 Robot at (2, 2) is taking its turn...
-Attempting Fire
-Miss no robot found at (1, 3)
-Remaining Shells: 9
-
-🤖 Robot at (0, 2) is taking its turn...
-Attempting Fire
-Miss go cry abt it lol
-Remaining Shells: 8
-
-🤖 Robot at (2, 0) is taking its turn...
+🤖 Robot Beta is taking its turn...
 Attempting Look
 Looking around (2, 0):
 Coordinate (1, -1) is out of bounds.
@@ -96,589 +179,90 @@ Coordinate (1, 1) is empty.
 Coordinate (2, 1) is empty.
 Coordinate (3, 1) is empty.
 
-🤖 Robot at (6, 1) is taking its turn...
+🤖 Robot Sigma is taking its turn...
+Attempting Move
+Moved to new position: (4, 2)
+
+🤖 Robot Nova is taking its turn...
+Attempting Fire
+Miss no robot found at (8, 2)
+Remaining Shells: 8
+
+🤖 Robot Cole is taking its turn...
+Attempting Look
+Looking around (6, 2):
+Coordinate (5, 1) is empty.
+There's a robot at coordinate (6, 1).
+Coordinate (7, 1) is empty.
+Coordinate (5, 2) is empty.
+Coordinate (7, 2) is empty.
+Coordinate (5, 3) is empty.
+Coordinate (6, 3) is empty.
+Coordinate (7, 3) is empty.
+
+🤖 Robot Zeta is taking its turn...
 Attempting Look
 Looking around (6, 1):
 Coordinate (5, 0) is empty.
 Coordinate (6, 0) is empty.
 Coordinate (7, 0) is empty.
 Coordinate (5, 1) is empty.
-There's a robot at coordinate (7, 1).
+Coordinate (7, 1) is empty.
 Coordinate (5, 2) is empty.
-Coordinate (6, 2) is empty.
+There's a robot at coordinate (6, 2).
 Coordinate (7, 2) is empty.
-
-🤖 Robot at (0, 2) is taking its turn...
-Attempting Fire
-Out of bounds. Therefore, bullet wasted
-
-📋 Robot Status After Turn 2:
- - Robot at (7, 1) is alive with 2 lives and remaining shells: 9
- - Robot at (2, 2) is alive with 3 lives and remaining shells: 9
- - Robot at (0, 2) is alive with 3 lives and remaining shells: 8
- - Robot at (2, 0) is alive with 3 lives and remaining shells: 9
- - Robot at (6, 1) is alive with 3 lives and remaining shells: 10
- - Robot at (0, 2) is alive with 3 lives and remaining shells: 9
-
-🗺️ Battlefield Grid:
-. . B . . . . . . . 
-. . . . . . S K . . 
-C . J . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-
-
-======= TURN #3 =======
-
-🤖 Robot at (7, 1) is taking its turn...
-Attempting Fire
-Miss go cry abt it lol
-Remaining Shells: 8
-
-🤖 Robot at (2, 2) is taking its turn...
-Attempting Look
-Looking around (2, 2):
-Coordinate (1, 1) is empty.
-Coordinate (2, 1) is empty.
-Coordinate (3, 1) is empty.
-Coordinate (1, 2) is empty.
-Coordinate (3, 2) is empty.
-Coordinate (1, 3) is empty.
-Coordinate (2, 3) is empty.
-Coordinate (3, 3) is empty.
-
-🤖 Robot at (0, 2) is taking its turn...
-Attempting Move
-Cannot move out of bounds!
-
-🤖 Robot at (2, 0) is taking its turn...
-Attempting Fire
-Miss no robot found at (2, 1)
-Remaining Shells: 8
-
-🤖 Robot at (6, 1) is taking its turn...
-Attempting Look
-Looking around (6, 1):
-Coordinate (5, 0) is empty.
-Coordinate (6, 0) is empty.
-Coordinate (7, 0) is empty.
-Coordinate (5, 1) is empty.
-There's a robot at coordinate (7, 1).
-Coordinate (5, 2) is empty.
-Coordinate (6, 2) is empty.
-Coordinate (7, 2) is empty.
-
-🤖 Robot at (0, 2) is taking its turn...
-Attempting Move
-Moved to new position: (1, 1)
 
 📋 Robot Status After Turn 3:
- - Robot at (7, 1) is alive with 2 lives and remaining shells: 8
- - Robot at (2, 2) is alive with 3 lives and remaining shells: 9
- - Robot at (0, 2) is alive with 3 lives and remaining shells: 8
- - Robot at (2, 0) is alive with 3 lives and remaining shells: 8
+ - Robot at (1, 2) is alive with 3 lives and remaining shells: 8
+ - Robot at (9, 3) is alive with 2 lives and remaining shells: 9
+ - Robot at (0, 2) is alive with 2 lives and remaining shells: 10
+ - Robot at (2, 0) is alive with 3 lives and remaining shells: 9
+ - Robot at (4, 2) is alive with 3 lives and remaining shells: 9
+ - Robot at (8, 3) is alive with 3 lives and remaining shells: 8
+ - Robot at (6, 2) is alive with 3 lives and remaining shells: 10
  - Robot at (6, 1) is alive with 3 lives and remaining shells: 10
- - Robot at (1, 1) is alive with 3 lives and remaining shells: 9
 
 🗺️ Battlefield Grid:
 . . B . . . . . . . 
-. C . . . . S K . . 
-A . J . . . . . . . 
-. . . . . . . . . . 
+. . . . . . Z . . . 
+A K . . S . C . . . 
+. . . . . . . . N J 
 . . . . . . . . . . 
 
 
 ======= TURN #4 =======
 
-🤖 Robot at (7, 1) is taking its turn...
-Attempting Look
-Looking around (7, 1):
-Coordinate (6, 0) is empty.
-Coordinate (7, 0) is empty.
-Coordinate (8, 0) is empty.
-There's a robot at coordinate (6, 1).
-Coordinate (8, 1) is empty.
-Coordinate (6, 2) is empty.
-Coordinate (7, 2) is empty.
-Coordinate (8, 2) is empty.
+🤖 Robot Kidd is taking its turn...
+Attempting Scouting
+🛰️ ScoutBot Activated! Battlefield overview:
+- - B - - - - - - - 
+- - - - - - Z - - - 
+A K - - S - C - - - 
+- - - - - - - - N J 
+- - - - - - - - - - 
 
-🤖 Robot at (2, 2) is taking its turn...
-Attempting Move
-Moved to new position: (3, 1)
-
-🤖 Robot at (0, 2) is taking its turn...
-Attempting Look
-Looking around (0, 2):
-Coordinate (-1, 1) is out of bounds.
-Coordinate (0, 1) is empty.
-There's a robot at coordinate (1, 1).
-Coordinate (-1, 2) is out of bounds.
-Coordinate (1, 2) is empty.
-Coordinate (-1, 3) is out of bounds.
-Coordinate (0, 3) is empty.
-Coordinate (1, 3) is empty.
-
-🤖 Robot at (2, 0) is taking its turn...
-Attempting Fire
-Firing at (3, 1)... 
-Robot 3,1 was hit! Lives left: 2
-Remaining Shells: 7
-Attempting Upgrade
-Upgraded to LongShotBot
-
-🤖 Robot at (6, 1) is taking its turn...
-Attempting Fire
-Miss no robot found at (6, 0)
-Remaining Shells: 9
-
-🤖 Robot at (1, 1) is taking its turn...
-Attempting Fire
-Firing at (2, 0)... 
-Robot 2,0 was hit! Lives left: 2
-Remaining Shells: 8
-Attempting Upgrade
-Upgraded to JumpBot
-
-📋 Robot Status After Turn 4:
- - Robot at (7, 1) is alive with 2 lives and remaining shells: 8
- - Robot at (3, 1) is alive with 2 lives and remaining shells: 9
- - Robot at (0, 2) is alive with 3 lives and remaining shells: 8
- - Robot at (2, 0) is alive with 2 lives and remaining shells: 7
- - Robot at (6, 1) is alive with 3 lives and remaining shells: 9
- - Robot at (1, 1) is alive with 3 lives and remaining shells: 8
-
-🗺️ Battlefield Grid:
-. . B . . . . . . . 
-. C . J . . S K . . 
-A . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . . . . 
-
-
-======= TURN #5 =======
-⚠️ Attention: Random GenericRobot 'Nova' added at (0, 0)!
-
-🤖 Robot at (7, 1) is taking its turn...
-Attempting Look
-Looking around (7, 1):
-Coordinate (6, 0) is empty.
-Coordinate (7, 0) is empty.
-Coordinate (8, 0) is empty.
-There's a robot at coordinate (6, 1).
-Coordinate (8, 1) is empty.
-Coordinate (6, 2) is empty.
-Coordinate (7, 2) is empty.
-Coordinate (8, 2) is empty.
-
-
-💫 Robot respawned to new position (6, 4)
-
-🤖 Robot at (6, 4) is taking its turn...
-Attempting Move
-Moved to new position: (7, 4)
-
-🤖 Robot at (0, 2) is taking its turn...
-Attempting Look
-Looking around (0, 2):
-Coordinate (-1, 1) is out of bounds.
-Coordinate (0, 1) is empty.
-There's a robot at coordinate (1, 1).
-Coordinate (-1, 2) is out of bounds.
-Coordinate (1, 2) is empty.
-Coordinate (-1, 3) is out of bounds.
-Coordinate (0, 3) is empty.
-Coordinate (1, 3) is empty.
-
-
-💫 Robot respawned to new position (9, 2)
-
-🤖 Robot at (9, 2) is taking its turn...
-Attempting Move
-Moved to new position: (9, 1)
-
-🤖 Robot at (6, 1) is taking its turn...
+🤖 Robot Jet is taking its turn...
 Attempting Fire
 Miss go cry abt it lol
 Remaining Shells: 8
 
-🤖 Robot at (1, 1) is taking its turn...
-Attempting Look
-Looking around (1, 1):
-There's a robot at coordinate (0, 0).
-Coordinate (1, 0) is empty.
-Coordinate (2, 0) is empty.
-Coordinate (0, 1) is empty.
-Coordinate (2, 1) is empty.
-There's a robot at coordinate (0, 2).
-Coordinate (1, 2) is empty.
-Coordinate (2, 2) is empty.
-
-🤖 Robot at (0, 0) is taking its turn...
-Attempting Fire
-Out of bounds. Therefore, bullet wasted
-
-📋 Robot Status After Turn 5:
- - Robot at (7, 1) is alive with 2 lives and remaining shells: 8
- - Robot at (7, 4) is alive with 2 lives and remaining shells: 9
- - Robot at (0, 2) is alive with 3 lives and remaining shells: 8
- - Robot at (9, 1) is alive with 2 lives and remaining shells: 7
- - Robot at (6, 1) is alive with 3 lives and remaining shells: 8
- - Robot at (1, 1) is alive with 3 lives and remaining shells: 8
- - Robot at (0, 0) is alive with 3 lives and remaining shells: 9
-
-🗺️ Battlefield Grid:
-N . . . . . . . . . 
-. C . . . . S K . B 
-A . . . . . . . . . 
-. . . . . . . . . . 
-. . . . . . . J . . 
-
-
-======= TURN #6 =======
-
-🤖 Robot at (7, 1) is taking its turn...
-Attempting Look
-Looking around (7, 1):
-Coordinate (6, 0) is empty.
-Coordinate (7, 0) is empty.
-Coordinate (8, 0) is empty.
-There's a robot at coordinate (6, 1).
-Coordinate (8, 1) is empty.
-Coordinate (6, 2) is empty.
-Coordinate (7, 2) is empty.
-Coordinate (8, 2) is empty.
-
-🤖 Robot at (7, 4) is taking its turn...
+🤖 Robot Alpha is taking its turn...
 Attempting Move
-Moved to new position: (7, 3)
+Cannot move out of bounds!
 
-🤖 Robot at (0, 2) is taking its turn...
-Attempting Fire
-Miss go cry abt it lol
-Remaining Shells: 7
-
-🤖 Robot at (9, 1) is taking its turn...
-Attempting Fire
-Miss no robot found at (9, 0)
-Remaining Shells: 6
-
-🤖 Robot at (6, 1) is taking its turn...
+🤖 Robot Beta is taking its turn...
 Attempting Look
-Looking around (6, 1):
-Coordinate (5, 0) is empty.
-Coordinate (6, 0) is empty.
-Coordinate (7, 0) is empty.
-Coordinate (5, 1) is empty.
-There's a robot at coordinate (7, 1).
-Coordinate (5, 2) is empty.
-Coordinate (6, 2) is empty.
-Coordinate (7, 2) is empty.
-
-🤖 Robot at (1, 1) is taking its turn...
-Attempting Move
-Moved to new position: (2, 0)
-
-🤖 Robot at (0, 0) is taking its turn...
-Attempting Look
-Looking around (0, 0):
-Coordinate (-1, -1) is out of bounds.
-Coordinate (0, -1) is out of bounds.
+Looking around (2, 0):
 Coordinate (1, -1) is out of bounds.
-Coordinate (-1, 0) is out of bounds.
+Coordinate (2, -1) is out of bounds.
+Coordinate (3, -1) is out of bounds.
 Coordinate (1, 0) is empty.
-Coordinate (-1, 1) is out of bounds.
-Coordinate (0, 1) is empty.
+Coordinate (3, 0) is empty.
 Coordinate (1, 1) is empty.
+Coordinate (2, 1) is empty.
+Coordinate (3, 1) is empty.
 
-📋 Robot Status After Turn 6:
- - Robot at (7, 1) is alive with 2 lives and remaining shells: 8
- - Robot at (7, 3) is alive with 2 lives and remaining shells: 9
- - Robot at (0, 2) is alive with 3 lives and remaining shells: 7
- - Robot at (9, 1) is alive with 2 lives and remaining shells: 6
- - Robot at (6, 1) is alive with 3 lives and remaining shells: 8
- - Robot at (2, 0) is alive with 3 lives and remaining shells: 8
- - Robot at (0, 0) is alive with 3 lives and remaining shells: 9
-
-🗺️ Battlefield Grid:
-N . C . . . . . . . 
-. . . . . . S K . B 
-A . . . . . . . . . 
-. . . . . . . J . . 
-. . . . . . . . . . 
-
-
-======= TURN #7 =======
-
-🤖 Robot at (7, 1) is taking its turn...
-Attempting Fire
-Miss no robot found at (8, 0)
-Remaining Shells: 7
-
-🤖 Robot at (7, 3) is taking its turn...
-Attempting Look
-Looking around (7, 3):
-Coordinate (6, 2) is empty.
-Coordinate (7, 2) is empty.
-Coordinate (8, 2) is empty.
-Coordinate (6, 3) is empty.
-Coordinate (8, 3) is empty.
-Coordinate (6, 4) is empty.
-Coordinate (7, 4) is empty.
-Coordinate (8, 4) is empty.
-
-🤖 Robot at (0, 2) is taking its turn...
-Attempting Look
-Looking around (0, 2):
-Coordinate (-1, 1) is out of bounds.
-Coordinate (0, 1) is empty.
-Coordinate (1, 1) is empty.
-Coordinate (-1, 2) is out of bounds.
-Coordinate (1, 2) is empty.
-Coordinate (-1, 3) is out of bounds.
-Coordinate (0, 3) is empty.
-Coordinate (1, 3) is empty.
-
-🤖 Robot at (9, 1) is taking its turn...
-Attempting Look
-Looking around (9, 1):
-Coordinate (8, 0) is empty.
-Coordinate (9, 0) is empty.
-Coordinate (10, 0) is out of bounds.
-Coordinate (8, 1) is empty.
-Coordinate (10, 1) is out of bounds.
-Coordinate (8, 2) is empty.
-Coordinate (9, 2) is empty.
-Coordinate (10, 2) is out of bounds.
-
-🤖 Robot at (6, 1) is taking its turn...
-Attempting Fire
-Miss go cry abt it lol
-Remaining Shells: 7
-
-🤖 Robot at (2, 0) is taking its turn...
-Attempting Jump
-Robot jumped to 5, 4
-
-🤖 Robot at (0, 0) is taking its turn...
-Attempting Fire
-Out of bounds. Therefore, bullet wasted
-
-📋 Robot Status After Turn 7:
- - Robot at (7, 1) is alive with 2 lives and remaining shells: 7
- - Robot at (7, 3) is alive with 2 lives and remaining shells: 9
- - Robot at (0, 2) is alive with 3 lives and remaining shells: 7
- - Robot at (9, 1) is alive with 2 lives and remaining shells: 6
- - Robot at (6, 1) is alive with 3 lives and remaining shells: 7
- - Robot at (5, 4) is alive with 3 lives and remaining shells: 8
- - Robot at (0, 0) is alive with 3 lives and remaining shells: 8
-
-🗺️ Battlefield Grid:
-N . . . . . . . . . 
-. . . . . . S K . B 
-A . . . . . . . . . 
-. . . . . . . J . . 
-. . . . . C . . . . 
-
-
-======= TURN #8 =======
-⚠️ Attention: Random GenericRobot 'Zeta' added at (9, 3)!
-
-🤖 Robot at (7, 1) is taking its turn...
-Attempting Fire
-Miss no robot found at (8, 0)
-Remaining Shells: 6
-
-🤖 Robot at (7, 3) is taking its turn...
-Attempting Look
-Looking around (7, 3):
-Coordinate (6, 2) is empty.
-Coordinate (7, 2) is empty.
-Coordinate (8, 2) is empty.
-Coordinate (6, 3) is empty.
-Coordinate (8, 3) is empty.
-Coordinate (6, 4) is empty.
-Coordinate (7, 4) is empty.
-Coordinate (8, 4) is empty.
-
-🤖 Robot at (0, 2) is taking its turn...
-Attempting Jump
-Robot jumped to 6, 0
-
-🤖 Robot at (9, 1) is taking its turn...
-Attempting Look
-Looking around (9, 1):
-Coordinate (8, 0) is empty.
-Coordinate (9, 0) is empty.
-Coordinate (10, 0) is out of bounds.
-Coordinate (8, 1) is empty.
-Coordinate (10, 1) is out of bounds.
-Coordinate (8, 2) is empty.
-Coordinate (9, 2) is empty.
-Coordinate (10, 2) is out of bounds.
-
-🤖 Robot at (6, 1) is taking its turn...
-Attempting Move
-Moved to new position: (6, 2)
-
-🤖 Robot at (5, 4) is taking its turn...
-Attempting Look
-Looking around (5, 4):
-Coordinate (4, 3) is empty.
-Coordinate (5, 3) is empty.
-Coordinate (6, 3) is empty.
-Coordinate (4, 4) is empty.
-Coordinate (6, 4) is empty.
-Coordinate (4, 5) is out of bounds.
-Coordinate (5, 5) is out of bounds.
-Coordinate (6, 5) is out of bounds.
-
-🤖 Robot at (0, 0) is taking its turn...
-Attempting Move
-Moved to new position: (1, 1)
-
-🤖 Robot at (9, 3) is taking its turn...
-Attempting Look
-Looking around (9, 3):
-Coordinate (8, 2) is empty.
-Coordinate (9, 2) is empty.
-Coordinate (10, 2) is out of bounds.
-Coordinate (8, 3) is empty.
-Coordinate (10, 3) is out of bounds.
-Coordinate (8, 4) is empty.
-Coordinate (9, 4) is empty.
-Coordinate (10, 4) is out of bounds.
-
-📋 Robot Status After Turn 8:
- - Robot at (7, 1) is alive with 2 lives and remaining shells: 6
- - Robot at (7, 3) is alive with 2 lives and remaining shells: 9
- - Robot at (6, 0) is alive with 3 lives and remaining shells: 7
- - Robot at (9, 1) is alive with 2 lives and remaining shells: 6
- - Robot at (6, 2) is alive with 3 lives and remaining shells: 7
- - Robot at (5, 4) is alive with 3 lives and remaining shells: 8
- - Robot at (1, 1) is alive with 3 lives and remaining shells: 8
- - Robot at (9, 3) is alive with 3 lives and remaining shells: 10
-
-🗺️ Battlefield Grid:
-. . . . . . A . . . 
-. N . . . . . K . B 
-. . . . . . S . . . 
-. . . . . . . J . Z 
-. . . . . C . . . . 
-
-
-======= TURN #9 =======
-
-🤖 Robot at (7, 1) is taking its turn...
-Attempting Look
-Looking around (7, 1):
-There's a robot at coordinate (6, 0).
-Coordinate (7, 0) is empty.
-Coordinate (8, 0) is empty.
-Coordinate (6, 1) is empty.
-Coordinate (8, 1) is empty.
-There's a robot at coordinate (6, 2).
-Coordinate (7, 2) is empty.
-Coordinate (8, 2) is empty.
-
-🤖 Robot at (7, 3) is taking its turn...
-Attempting Move
-Moved to new position: (6, 4)
-
-🤖 Robot at (6, 0) is taking its turn...
-Attempting Jump
-Robot jumped to 4, 2
-
-🤖 Robot at (9, 1) is taking its turn...
-Attempting Fire
-Miss no robot found at (9, 2)
-Remaining Shells: 5
-
-🤖 Robot at (6, 2) is taking its turn...
-Attempting Look
-Looking around (6, 2):
-Coordinate (5, 1) is empty.
-Coordinate (6, 1) is empty.
-There's a robot at coordinate (7, 1).
-Coordinate (5, 2) is empty.
-Coordinate (7, 2) is empty.
-Coordinate (5, 3) is empty.
-Coordinate (6, 3) is empty.
-Coordinate (7, 3) is empty.
-
-🤖 Robot at (5, 4) is taking its turn...
-Attempting Look
-Looking around (5, 4):
-Coordinate (4, 3) is empty.
-Coordinate (5, 3) is empty.
-Coordinate (6, 3) is empty.
-Coordinate (4, 4) is empty.
-There's a robot at coordinate (6, 4).
-Coordinate (4, 5) is out of bounds.
-Coordinate (5, 5) is out of bounds.
-Coordinate (6, 5) is out of bounds.
-
-🤖 Robot at (1, 1) is taking its turn...
-Attempting Fire
-Miss no robot found at (0, 1)
-Remaining Shells: 7
-
-🤖 Robot at (9, 3) is taking its turn...
-Attempting Look
-Looking around (9, 3):
-Coordinate (8, 2) is empty.
-Coordinate (9, 2) is empty.
-Coordinate (10, 2) is out of bounds.
-Coordinate (8, 3) is empty.
-Coordinate (10, 3) is out of bounds.
-Coordinate (8, 4) is empty.
-Coordinate (9, 4) is empty.
-Coordinate (10, 4) is out of bounds.
-
-📋 Robot Status After Turn 9:
- - Robot at (7, 1) is alive with 2 lives and remaining shells: 6
- - Robot at (6, 4) is alive with 2 lives and remaining shells: 9
- - Robot at (4, 2) is alive with 3 lives and remaining shells: 7
- - Robot at (9, 1) is alive with 2 lives and remaining shells: 5
- - Robot at (6, 2) is alive with 3 lives and remaining shells: 7
- - Robot at (5, 4) is alive with 3 lives and remaining shells: 8
- - Robot at (1, 1) is alive with 3 lives and remaining shells: 7
- - Robot at (9, 3) is alive with 3 lives and remaining shells: 10
-
-🗺️ Battlefield Grid:
-. . . . . . . . . . 
-. N . . . . . K . B 
-. . . . A . S . . . 
-. . . . . . . . . Z 
-. . . . . C J . . . 
-
-
-======= TURN #10 =======
-
-🤖 Robot at (7, 1) is taking its turn...
-Attempting Look
-Looking around (7, 1):
-Coordinate (6, 0) is empty.
-Coordinate (7, 0) is empty.
-Coordinate (8, 0) is empty.
-Coordinate (6, 1) is empty.
-Coordinate (8, 1) is empty.
-There's a robot at coordinate (6, 2).
-Coordinate (7, 2) is empty.
-Coordinate (8, 2) is empty.
-
-🤖 Robot at (6, 4) is taking its turn...
-Attempting Look
-Looking around (6, 4):
-Coordinate (5, 3) is empty.
-Coordinate (6, 3) is empty.
-Coordinate (7, 3) is empty.
-There's a robot at coordinate (5, 4).
-Coordinate (7, 4) is empty.
-Coordinate (5, 5) is out of bounds.
-Coordinate (6, 5) is out of bounds.
-Coordinate (7, 5) is out of bounds.
-
-🤖 Robot at (4, 2) is taking its turn...
+🤖 Robot Sigma is taking its turn...
 Attempting Look
 Looking around (4, 2):
 Coordinate (3, 1) is empty.
@@ -690,69 +274,525 @@ Coordinate (3, 3) is empty.
 Coordinate (4, 3) is empty.
 Coordinate (5, 3) is empty.
 
-🤖 Robot at (9, 1) is taking its turn...
+🤖 Robot Nova is taking its turn...
 Attempting Look
-Looking around (9, 1):
-Coordinate (8, 0) is empty.
-Coordinate (9, 0) is empty.
-Coordinate (10, 0) is out of bounds.
-Coordinate (8, 1) is empty.
-Coordinate (10, 1) is out of bounds.
+Looking around (8, 3):
+Coordinate (7, 2) is empty.
 Coordinate (8, 2) is empty.
 Coordinate (9, 2) is empty.
-Coordinate (10, 2) is out of bounds.
+Coordinate (7, 3) is empty.
+There's a robot at coordinate (9, 3).
+Coordinate (7, 4) is empty.
+Coordinate (8, 4) is empty.
+Coordinate (9, 4) is empty.
 
-🤖 Robot at (6, 2) is taking its turn...
-Attempting Fire
-Miss no robot found at (5, 1)
-Remaining Shells: 6
+🤖 Robot Cole is taking its turn...
+Attempting Look
+Looking around (6, 2):
+Coordinate (5, 1) is empty.
+There's a robot at coordinate (6, 1).
+Coordinate (7, 1) is empty.
+Coordinate (5, 2) is empty.
+Coordinate (7, 2) is empty.
+Coordinate (5, 3) is empty.
+Coordinate (6, 3) is empty.
+Coordinate (7, 3) is empty.
 
-🤖 Robot at (5, 4) is taking its turn...
+🤖 Robot Zeta is taking its turn...
+Attempting Look
+Looking around (6, 1):
+Coordinate (5, 0) is empty.
+Coordinate (6, 0) is empty.
+Coordinate (7, 0) is empty.
+Coordinate (5, 1) is empty.
+Coordinate (7, 1) is empty.
+Coordinate (5, 2) is empty.
+There's a robot at coordinate (6, 2).
+Coordinate (7, 2) is empty.
+
+📋 Robot Status After Turn 4:
+ - Robot at (1, 2) is alive with 3 lives and remaining shells: 8
+ - Robot at (9, 3) is alive with 2 lives and remaining shells: 8
+ - Robot at (0, 2) is alive with 2 lives and remaining shells: 10
+ - Robot at (2, 0) is alive with 3 lives and remaining shells: 9
+ - Robot at (4, 2) is alive with 3 lives and remaining shells: 9
+ - Robot at (8, 3) is alive with 3 lives and remaining shells: 8
+ - Robot at (6, 2) is alive with 3 lives and remaining shells: 10
+ - Robot at (6, 1) is alive with 3 lives and remaining shells: 10
+
+🗺️ Battlefield Grid:
+. . B . . . . . . . 
+. . . . . . Z . . . 
+A K . . S . C . . . 
+. . . . . . . . N J 
+. . . . . . . . . . 
+
+
+======= TURN #5 =======
+
+🤖 Robot Kidd is taking its turn...
+Attempting Move
+Moved to new position: (2, 1)
+
+🤖 Robot Jet is taking its turn...
+Attempting Move
+Cannot move to (8, 3) - blocked by another robot at (8, 3)
+
+🤖 Robot Alpha is taking its turn...
 Attempting Fire
-Miss go cry abt it lol
+Miss no robot found at (0, 3)
+Remaining Shells: 9
+
+🤖 Robot Beta is taking its turn...
+Attempting Move
+Cannot move to (2, 1) - blocked by another robot at (2, 1)
+
+🤖 Robot Sigma is taking its turn...
+Attempting Move
+Moved to new position: (4, 3)
+
+🤖 Robot Nova is taking its turn...
+Attempting Look
+Looking around (8, 3):
+Coordinate (7, 2) is empty.
+Coordinate (8, 2) is empty.
+Coordinate (9, 2) is empty.
+Coordinate (7, 3) is empty.
+There's a robot at coordinate (9, 3).
+Coordinate (7, 4) is empty.
+Coordinate (8, 4) is empty.
+Coordinate (9, 4) is empty.
+
+🤖 Robot Cole is taking its turn...
+Attempting Look
+Looking around (6, 2):
+Coordinate (5, 1) is empty.
+There's a robot at coordinate (6, 1).
+Coordinate (7, 1) is empty.
+Coordinate (5, 2) is empty.
+Coordinate (7, 2) is empty.
+Coordinate (5, 3) is empty.
+Coordinate (6, 3) is empty.
+Coordinate (7, 3) is empty.
+
+🤖 Robot Zeta is taking its turn...
+Attempting Fire
+Miss no robot found at (6, 0)
+Remaining Shells: 9
+
+📋 Robot Status After Turn 5:
+ - Robot at (2, 1) is alive with 3 lives and remaining shells: 8
+ - Robot at (9, 3) is alive with 2 lives and remaining shells: 8
+ - Robot at (0, 2) is alive with 2 lives and remaining shells: 9
+ - Robot at (2, 0) is alive with 3 lives and remaining shells: 9
+ - Robot at (4, 3) is alive with 3 lives and remaining shells: 9
+ - Robot at (8, 3) is alive with 3 lives and remaining shells: 8
+ - Robot at (6, 2) is alive with 3 lives and remaining shells: 10
+ - Robot at (6, 1) is alive with 3 lives and remaining shells: 9
+
+🗺️ Battlefield Grid:
+. . B . . . . . . . 
+. . K . . . Z . . . 
+A . . . . . C . . . 
+. . . . S . . . N J 
+. . . . . . . . . . 
+
+
+======= TURN #6 =======
+
+🤖 Robot Kidd is taking its turn...
+Attempting Fire
+Miss no robot found at (1, 1)
 Remaining Shells: 7
 
-🤖 Robot at (1, 1) is taking its turn...
-Attempting Fire
-Miss go cry abt it lol
-Remaining Shells: 6
-
-🤖 Robot at (9, 3) is taking its turn...
+🤖 Robot Jet is taking its turn...
 Attempting Look
 Looking around (9, 3):
 Coordinate (8, 2) is empty.
 Coordinate (9, 2) is empty.
 Coordinate (10, 2) is out of bounds.
-Coordinate (8, 3) is empty.
+There's a robot at coordinate (8, 3).
 Coordinate (10, 3) is out of bounds.
 Coordinate (8, 4) is empty.
 Coordinate (9, 4) is empty.
 Coordinate (10, 4) is out of bounds.
 
-📋 Robot Status After Turn 10:
- - Robot at (7, 1) is alive with 2 lives and remaining shells: 6
- - Robot at (6, 4) is alive with 2 lives and remaining shells: 9
- - Robot at (4, 2) is alive with 3 lives and remaining shells: 7
- - Robot at (9, 1) is alive with 2 lives and remaining shells: 5
- - Robot at (6, 2) is alive with 3 lives and remaining shells: 6
- - Robot at (5, 4) is alive with 3 lives and remaining shells: 7
- - Robot at (1, 1) is alive with 3 lives and remaining shells: 6
- - Robot at (9, 3) is alive with 3 lives and remaining shells: 10
+🤖 Robot Alpha is taking its turn...
+Attempting Fire
+Miss go cry abt it lol
+Remaining Shells: 8
+
+🤖 Robot Beta is taking its turn...
+Attempting Fire
+Miss no robot found at (1, 1)
+Remaining Shells: 8
+
+🤖 Robot Sigma is taking its turn...
+Attempting Move
+Moved to new position: (3, 2)
+
+🤖 Robot Nova is taking its turn...
+Attempting Look
+Looking around (8, 3):
+Coordinate (7, 2) is empty.
+Coordinate (8, 2) is empty.
+Coordinate (9, 2) is empty.
+Coordinate (7, 3) is empty.
+There's a robot at coordinate (9, 3).
+Coordinate (7, 4) is empty.
+Coordinate (8, 4) is empty.
+Coordinate (9, 4) is empty.
+
+🤖 Robot Cole is taking its turn...
+Attempting Fire
+Miss go cry abt it lol
+Remaining Shells: 9
+
+🤖 Robot Zeta is taking its turn...
+Attempting Look
+Looking around (6, 1):
+Coordinate (5, 0) is empty.
+Coordinate (6, 0) is empty.
+Coordinate (7, 0) is empty.
+Coordinate (5, 1) is empty.
+Coordinate (7, 1) is empty.
+Coordinate (5, 2) is empty.
+There's a robot at coordinate (6, 2).
+Coordinate (7, 2) is empty.
+
+📋 Robot Status After Turn 6:
+ - Robot at (2, 1) is alive with 3 lives and remaining shells: 7
+ - Robot at (9, 3) is alive with 2 lives and remaining shells: 8
+ - Robot at (0, 2) is alive with 2 lives and remaining shells: 8
+ - Robot at (2, 0) is alive with 3 lives and remaining shells: 8
+ - Robot at (3, 2) is alive with 3 lives and remaining shells: 9
+ - Robot at (8, 3) is alive with 3 lives and remaining shells: 8
+ - Robot at (6, 2) is alive with 3 lives and remaining shells: 9
+ - Robot at (6, 1) is alive with 3 lives and remaining shells: 9
 
 🗺️ Battlefield Grid:
+. . B . . . . . . . 
+. . K . . . Z . . . 
+A . . S . . C . . . 
+. . . . . . . . N J 
 . . . . . . . . . . 
-. N . . . . . K . B 
-. . . . A . S . . . 
-. . . . . . . . . Z 
-. . . . . C J . . . 
+
+
+======= TURN #7 =======
+
+🤖 Robot Kidd is taking its turn...
+Attempting Scouting
+🛰️ ScoutBot Activated! Battlefield overview:
+- - B - - - - - - - 
+- - K - - - Z - - - 
+A - - S - - C - - - 
+- - - - - - - - N J 
+- - - - - - - - - - 
+
+🤖 Robot Jet is taking its turn...
+Attempting Look
+Looking around (9, 3):
+Coordinate (8, 2) is empty.
+Coordinate (9, 2) is empty.
+Coordinate (10, 2) is out of bounds.
+There's a robot at coordinate (8, 3).
+Coordinate (10, 3) is out of bounds.
+Coordinate (8, 4) is empty.
+Coordinate (9, 4) is empty.
+Coordinate (10, 4) is out of bounds.
+
+🤖 Robot Alpha is taking its turn...
+Attempting Look
+Looking around (0, 2):
+Coordinate (-1, 1) is out of bounds.
+Coordinate (0, 1) is empty.
+Coordinate (1, 1) is empty.
+Coordinate (-1, 2) is out of bounds.
+Coordinate (1, 2) is empty.
+Coordinate (-1, 3) is out of bounds.
+Coordinate (0, 3) is empty.
+Coordinate (1, 3) is empty.
+
+🤖 Robot Beta is taking its turn...
+Attempting Fire
+Out of bounds. Therefore, bullet wasted
+
+🤖 Robot Sigma is taking its turn...
+Attempting Look
+Looking around (3, 2):
+There's a robot at coordinate (2, 1).
+Coordinate (3, 1) is empty.
+Coordinate (4, 1) is empty.
+Coordinate (2, 2) is empty.
+Coordinate (4, 2) is empty.
+Coordinate (2, 3) is empty.
+Coordinate (3, 3) is empty.
+Coordinate (4, 3) is empty.
+
+🤖 Robot Nova is taking its turn...
+Attempting Fire
+Miss go cry abt it lol
+Remaining Shells: 7
+
+🤖 Robot Cole is taking its turn...
+Attempting Look
+Looking around (6, 2):
+Coordinate (5, 1) is empty.
+There's a robot at coordinate (6, 1).
+Coordinate (7, 1) is empty.
+Coordinate (5, 2) is empty.
+Coordinate (7, 2) is empty.
+Coordinate (5, 3) is empty.
+Coordinate (6, 3) is empty.
+Coordinate (7, 3) is empty.
+
+🤖 Robot Zeta is taking its turn...
+Attempting Move
+Moved to new position: (7, 2)
+
+📋 Robot Status After Turn 7:
+ - Robot at (2, 1) is alive with 3 lives and remaining shells: 7
+ - Robot at (9, 3) is alive with 2 lives and remaining shells: 8
+ - Robot at (0, 2) is alive with 2 lives and remaining shells: 8
+ - Robot at (2, 0) is alive with 3 lives and remaining shells: 7
+ - Robot at (3, 2) is alive with 3 lives and remaining shells: 9
+ - Robot at (8, 3) is alive with 3 lives and remaining shells: 7
+ - Robot at (6, 2) is alive with 3 lives and remaining shells: 9
+ - Robot at (7, 2) is alive with 3 lives and remaining shells: 9
+
+🗺️ Battlefield Grid:
+. . B . . . . . . . 
+. . K . . . . . . . 
+A . . S . . C Z . . 
+. . . . . . . . N J 
+. . . . . . . . . . 
+
+
+======= TURN #8 =======
+
+🤖 Robot Kidd is taking its turn...
+Attempting Look
+Looking around (2, 1):
+Coordinate (1, 0) is empty.
+There's a robot at coordinate (2, 0).
+Coordinate (3, 0) is empty.
+Coordinate (1, 1) is empty.
+Coordinate (3, 1) is empty.
+Coordinate (1, 2) is empty.
+Coordinate (2, 2) is empty.
+There's a robot at coordinate (3, 2).
+
+🤖 Robot Jet is taking its turn...
+Attempting Fire
+Out of bounds. Therefore, bullet wasted
+
+🤖 Robot Alpha is taking its turn...
+Attempting Move
+Moved to new position: (0, 3)
+
+🤖 Robot Beta is taking its turn...
+Attempting Look
+Looking around (2, 0):
+Coordinate (1, -1) is out of bounds.
+Coordinate (2, -1) is out of bounds.
+Coordinate (3, -1) is out of bounds.
+Coordinate (1, 0) is empty.
+Coordinate (3, 0) is empty.
+Coordinate (1, 1) is empty.
+There's a robot at coordinate (2, 1).
+Coordinate (3, 1) is empty.
+
+🤖 Robot Sigma is taking its turn...
+Attempting Fire
+Miss no robot found at (2, 3)
+Remaining Shells: 8
+
+🤖 Robot Nova is taking its turn...
+Attempting Fire
+Firing at (7, 2)... 
+Robot 7,2 was hit! Lives left: 2
+Remaining Shells: 6
+Attempting Upgrade
+Upgraded to LongShotBot
+
+🤖 Robot Cole is taking its turn...
+Attempting Look
+Looking around (6, 2):
+Coordinate (5, 1) is empty.
+Coordinate (6, 1) is empty.
+Coordinate (7, 1) is empty.
+Coordinate (5, 2) is empty.
+There's a robot at coordinate (7, 2).
+Coordinate (5, 3) is empty.
+Coordinate (6, 3) is empty.
+Coordinate (7, 3) is empty.
+
+💥 Robot Zeta u r eliminated and skip action this turn.
+
+📋 Robot Status After Turn 8:
+ - Robot at (2, 1) is alive with 3 lives and remaining shells: 7
+ - Robot at (9, 3) is alive with 2 lives and remaining shells: 7
+ - Robot at (0, 3) is alive with 2 lives and remaining shells: 8
+ - Robot at (2, 0) is alive with 3 lives and remaining shells: 7
+ - Robot at (3, 2) is alive with 3 lives and remaining shells: 8
+ - Robot at (8, 3) is alive with 3 lives and remaining shells: 6
+ - Robot at (6, 2) is alive with 3 lives and remaining shells: 9
+ - Robot at (7, 2) is alive with 2 lives and remaining shells: 9
+
+🗺️ Battlefield Grid:
+. . B . . . . . . . 
+. . K . . . . . . . 
+. . . S . . C Z . . 
+A . . . . . . . N J 
+. . . . . . . . . . 
+
+
+======= TURN #9 =======
+
+🤖 Robot Kidd is taking its turn...
+Attempting Scouting
+🛰️ ScoutBot Activated! Battlefield overview:
+- - B - - - - - - - 
+- - K - - - - - - - 
+- - - S - - C Z - - 
+A - - - - - - - N J 
+- - - - - - - - - - 
+
+🤖 Robot Jet is taking its turn...
+Attempting Look
+Looking around (9, 3):
+Coordinate (8, 2) is empty.
+Coordinate (9, 2) is empty.
+Coordinate (10, 2) is out of bounds.
+There's a robot at coordinate (8, 3).
+Coordinate (10, 3) is out of bounds.
+Coordinate (8, 4) is empty.
+Coordinate (9, 4) is empty.
+Coordinate (10, 4) is out of bounds.
+
+🤖 Robot Alpha is taking its turn...
+Attempting Move
+Cannot move out of bounds!
+
+🤖 Robot Beta is taking its turn...
+Attempting Fire
+Out of bounds. Therefore, bullet wasted
+
+🤖 Robot Sigma is taking its turn...
+Attempting Move
+Moved to new position: (4, 2)
+
+🤖 Robot Nova is taking its turn...
+Attempting Longshot
+Long Shot activated!
+Out of bounds. Therefore, bullet wasted
+
+🤖 Robot Cole is taking its turn...
+Attempting Look
+Looking around (6, 2):
+Coordinate (5, 1) is empty.
+Coordinate (6, 1) is empty.
+Coordinate (7, 1) is empty.
+Coordinate (5, 2) is empty.
+There's a robot at coordinate (7, 2).
+Coordinate (5, 3) is empty.
+Coordinate (6, 3) is empty.
+Coordinate (7, 3) is empty.
+
+
+💫 Robot Zetarespawned to new position (1, 0)
+
+🤖 Robot Zeta is taking its turn...
+Attempting Move
+Moved to new position: (0, 1)
+
+📋 Robot Status After Turn 9:
+ - Robot at (2, 1) is alive with 3 lives and remaining shells: 7
+ - Robot at (9, 3) is alive with 2 lives and remaining shells: 7
+ - Robot at (0, 3) is alive with 2 lives and remaining shells: 8
+ - Robot at (2, 0) is alive with 3 lives and remaining shells: 6
+ - Robot at (4, 2) is alive with 3 lives and remaining shells: 8
+ - Robot at (8, 3) is alive with 3 lives and remaining shells: 5
+ - Robot at (6, 2) is alive with 3 lives and remaining shells: 9
+ - Robot at (0, 1) is alive with 2 lives and remaining shells: 9
+
+🗺️ Battlefield Grid:
+. . B . . . . . . . 
+Z . K . . . . . . . 
+. . . . S . C . . . 
+A . . . . . . . N J 
+. . . . . . . . . . 
+
+
+======= TURN #10 =======
+
+🤖 Robot Kidd is taking its turn...
+Attempting Jump
+Jump unsucessful
+
+🤖 Robot Jet is taking its turn...
+Attempting Move
+Cannot move out of bounds!
+
+🤖 Robot Alpha is taking its turn...
+Attempting Fire
+Miss go cry abt it lol
+Remaining Shells: 7
+
+🤖 Robot Beta is taking its turn...
+Attempting Fire
+Out of bounds. Therefore, bullet wasted
+
+🤖 Robot Sigma is taking its turn...
+Attempting Move
+Moved to new position: (4, 1)
+
+🤖 Robot Nova is taking its turn...
+Attempting Longshot
+Long Shot activated!
+Miss no robot found at (8, 1)
+Remaining Shells: 4
+
+🤖 Robot Cole is taking its turn...
+Attempting Look
+Looking around (6, 2):
+Coordinate (5, 1) is empty.
+Coordinate (6, 1) is empty.
+Coordinate (7, 1) is empty.
+Coordinate (5, 2) is empty.
+Coordinate (7, 2) is empty.
+Coordinate (5, 3) is empty.
+Coordinate (6, 3) is empty.
+Coordinate (7, 3) is empty.
+
+🤖 Robot Zeta is taking its turn...
+Attempting Fire
+Out of bounds. Therefore, bullet wasted
+
+📋 Robot Status After Turn 10:
+ - Robot at (2, 1) is alive with 3 lives and remaining shells: 7
+ - Robot at (9, 3) is alive with 2 lives and remaining shells: 7
+ - Robot at (0, 3) is alive with 2 lives and remaining shells: 7
+ - Robot at (2, 0) is alive with 3 lives and remaining shells: 5
+ - Robot at (4, 1) is alive with 3 lives and remaining shells: 8
+ - Robot at (8, 3) is alive with 3 lives and remaining shells: 4
+ - Robot at (6, 2) is alive with 3 lives and remaining shells: 9
+ - Robot at (0, 1) is alive with 2 lives and remaining shells: 8
+
+🗺️ Battlefield Grid:
+. . B . . . . . . . 
+Z . K . S . . . . . 
+. . . . . . C . . . 
+A . . . . . . . N J 
+. . . . . . . . . . 
 
 ==============================
 🏆 FINAL RESULTS:
- - Robot at (7, 1) SURVIVED with 2 lives and remaining shells: 6
- - Robot at (6, 4) SURVIVED with 2 lives and remaining shells: 9
- - Robot at (4, 2) SURVIVED with 3 lives and remaining shells: 7
- - Robot at (9, 1) SURVIVED with 2 lives and remaining shells: 5
- - Robot at (6, 2) SURVIVED with 3 lives and remaining shells: 6
- - Robot at (5, 4) SURVIVED with 3 lives and remaining shells: 7
- - Robot at (1, 1) SURVIVED with 3 lives and remaining shells: 6
- - Robot at (9, 3) SURVIVED with 3 lives and remaining shells: 10
+ - Robot at (2, 1) SURVIVED with 3 lives and remaining shells: 7
+ - Robot at (9, 3) SURVIVED with 2 lives and remaining shells: 7
+ - Robot at (0, 3) SURVIVED with 2 lives and remaining shells: 7
+ - Robot at (2, 0) SURVIVED with 3 lives and remaining shells: 5
+ - Robot at (4, 1) SURVIVED with 3 lives and remaining shells: 8
+ - Robot at (8, 3) SURVIVED with 3 lives and remaining shells: 4
+ - Robot at (6, 2) SURVIVED with 3 lives and remaining shells: 9
+ - Robot at (0, 1) SURVIVED with 2 lives and remaining shells: 8
