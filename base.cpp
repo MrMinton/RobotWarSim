@@ -35,6 +35,14 @@ void parseBattlefieldGrid(string &line){
     ss >> row >> cols;
     // cout << "This is m: "<< m <<" "<< "This is n: "<< n;
 }
+
+void parseSteps(string &line){
+    size_t pertama = line.find(":")+1;
+    string nomborsteps = line.substr(pertama);
+    stringstream ss(nomborsteps);
+    ss >> steps;
+    cout << "This is the number of steps: "<<steps;
+}
 void printGrid(const vector<Robot*>& robots) {
     vector<vector<string>> grid(row, vector<string>(cols, ".")); // Grid with default "."
 
@@ -62,7 +70,8 @@ int main(){
     vector<Robot*> robots;
     string type,namabot;
     int xcord,ycord;
-    fstream myFile;
+    ifstream myFile;
+    ofstream outputFile("actionlog.txt");
     int totalTurns = 20;
     int currentTurn = 0;
 
@@ -81,6 +90,9 @@ int main(){
         while(getline(myFile,line)){
             if (line.find("M by N") != string::npos) {
                 parseBattlefieldGrid(line);
+            }
+            if (line.find("steps") != string::npos){
+                parseSteps(line);
             }
             if (line.find("robots") != string::npos){
                 Parse r1;
@@ -121,7 +133,10 @@ int main(){
     
     cout << "--- TESTING FIRE FUNCTION ---" << endl;
     
-    while (currentTurn < 100) {
+    streambuf* coutbuf = cout.rdbuf(); // save old buffer
+    cout.rdbuf(outputFile.rdbuf()); // redirect cout to file
+
+    while (currentTurn < steps) {
         cout << "\n\n======= TURN #" << currentTurn + 1 << " =======\n";
         // 🆕 Spawn a GenericRobot at random turns
         if (find(randomSpawnTurns.begin(), randomSpawnTurns.end(), currentTurn + 1) != randomSpawnTurns.end()) {
