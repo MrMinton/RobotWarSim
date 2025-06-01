@@ -24,7 +24,7 @@ public:
         string robots = line.substr(nombor);
         stringstream ss(robots);
         ss >> robot_amount;
-        cout << "Robot amount is "<< robot_amount<<endl;
+        cout << "Robot amount is "<< robot_amount <<endl;
     };
 };
 
@@ -41,7 +41,7 @@ void parseSteps(string &line){
     string nomborsteps = line.substr(pertama);
     stringstream ss(nomborsteps);
     ss >> steps;
-    cout << "This is the number of steps: "<<steps;
+    cout << "This is the number of steps: " << steps << endl;
 }
 void printGrid(const vector<Robot*>& robots) {
     vector<vector<string>> grid(row, vector<string>(cols, ".")); // Grid with default "."
