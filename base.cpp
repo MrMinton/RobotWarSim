@@ -146,7 +146,7 @@ int main(){
                 int randY = rand() % row;
 
                 int index = rand() % namePool.size();
-                std::string botname = namePool[index];
+                string botname = namePool[index];
                 namePool.erase(namePool.begin() + index); 
 
                 Robot* newBot = new GenericRobot(botname, randX, randY);
@@ -172,7 +172,7 @@ int main(){
 
         cout << "\n📋 Robot Status After Turn " << currentTurn + 1 << ":\n";
         for (Robot* r : robots) {
-            cout << " - Robot at (" << r->getX() << ", " << r->getY() << ") ";
+            cout << r->getType() << " " << r->getName() << " at (" << r->getX() << ", " << r->getY() << ") ";
             if (r->isAlive())
                 cout << "is alive with " << r->getLive() << " lives and remaining shells: "<< r->getShells();
             else
@@ -203,7 +203,7 @@ int main(){
     cout << "\n==============================\n";
     cout << "🏆 FINAL RESULTS:\n";
     for (Robot* r : robots) {
-        cout << " - Robot at (" << r->getX() << ", " << r->getY() << ") ";
+        cout << r->getType() << " " << r->getName() << " at (" << r->getX() << ", " << r->getY() << ") ";
         if (r->isAlive())
             cout << "SURVIVED with " << r->getLive() << " lives and remaining shells: "<<r->getShells();
         else

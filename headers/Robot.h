@@ -8,7 +8,7 @@ class Robot{
 private:
     bool alive = true;
     string name;
-    string type;
+    string type = "GenericRobot";
     int x, y;
     int lives =3;
     int shells =10;
