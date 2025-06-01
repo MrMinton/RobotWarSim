@@ -13,6 +13,7 @@
 
 int row,cols;
 int robot_amount;
+int steps;
 
 using namespace std;
 
